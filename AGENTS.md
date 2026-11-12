@@ -27,13 +27,17 @@
 - Use Vue com TypeScript e SVG para a visualização. Mantenha o diagrama compreensível e as interações acessíveis por teclado e com nomes acessíveis estáveis.
 - A animação é uma analogia explicativa, não um benchmark nem uma simulação quantitativa. Mantenha a sua evolução determinística; pausar/continuar e reiniciar devem funcionar de forma previsível, e reiniciar deve restaurar o estado inicial.
 - Utilize sempre técnicas de animação apelativas. Easing, bounces, e outros.
-- Preserve os nomes acessíveis dos controlos e os seletores de estado `data-testid` estabelecidos pelos testes. Ao alterar um contrato, atualize os testes correspondentes em conjunto.
+- Preserve os nomes acessíveis dos controlos. Verifique as interações por inspeção e com feedback dos utilizadores.
 
 ## Verificação e artefactos
 
 - Use pnpm via Corepack e respeite o lockfile: `pnpm install --frozen-lockfile`.
+- Verifique as alterações por inspeção no navegador e recolha feedback dos utilizadores. Teste também a navegação por teclado e os estados interativos afetados.
+- Para inspeção sem interface gráfica, inicie `corepack pnpm dev` e use a ferramenta de navegador em modo headless. Navegue pelos diapositivos e teste os controlos afetados.
+- Capture e inspecione imagens com a ferramenta de navegador. Aguarde que o diapositivo e os estados necessários estejam visíveis antes de capturar.
+- Não instale uma ferramenta de testes de navegador no projeto para estas verificações. O feedback dos utilizadores complementa a inspeção.
 - Para cada alteração visual, compile, abra no navegador, capture imagens, inspecione e corrija os problemas.
-- Execute `pnpm build`, `pnpm test` e `pnpm screenshot` quando forem relevantes. As capturas ficam em `artifacts/`.
+- Execute `pnpm build` quando for relevante. Guarde as capturas em `artifacts/`.
 - Não inclua capturas geradas nem outros artefactos de build no controlo de versões, salvo pedido explícito.
 - O build estático deve poder ser servido localmente para uma apresentação sem Internet. Verifique que os recursos necessários não dependem da rede.
 - Se criar commits, mantenha cada commit pequeno e limitado a uma alteração coerente.
