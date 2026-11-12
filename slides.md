@@ -124,7 +124,7 @@ layout: none
 </div>
 
 <!--
-2:00 — Perguntar que picareta partirá mais blocos. Cada movimento representa uma batida de relógio, não uma operação real. As cadências de uma e dez batidas por segundo são ilustrativas e não representam as frequências do ENIAC ou do iPhone. Um processador a 3 GHz tem 3 mil milhões de ciclos por segundo; ciclos não são somas e o trabalho realizado em cada ciclo varia.
+2:00 — Perguntar que picareta partirá mais blocos. Cada movimento representa uma batida de relógio, não uma operação real. A ponta da picareta atinge aproximadamente o centro do bloco e ressalta antes de regressar. As cadências de uma e dez batidas por segundo são ilustrativas e não representam as frequências do ENIAC ou do iPhone. Um processador a 3 GHz tem 3 mil milhões de ciclos por segundo; ciclos não são somas e o trabalho realizado em cada ciclo varia.
 -->
 ---
 layout: none

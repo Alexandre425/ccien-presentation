@@ -71,10 +71,13 @@ onBeforeUnmount(() => cancelAnimationFrame(frame))
             <path d="M14 159H160" stroke="#b5cbd4" stroke-width="2" />
             <g class="block"><path d="M92 112l19-10 20 10-19 11z" fill="#b7e3f4" stroke="#009ee0" stroke-width="2"/><path d="M92 112v25l20 11v-25z" fill="#80cbe9" stroke="#009ee0" stroke-width="2"/><path d="M112 123v25l19-11v-25z" fill="#009ee0" stroke="#009ee0" stroke-width="2"/></g>
             <g class="pickaxe">
-              <path d="M48 152L101 91" stroke="#405660" stroke-width="10" stroke-linecap="round"/>
-              <path d="M50 150L99 93" stroke="#9cabb1" stroke-width="3" stroke-linecap="round"/>
-              <path d="M60 62Q83 64 104 82Q125 98 135 126Q117 108 99 98Q77 78 60 62Z" fill="#202124" stroke="#202124" stroke-width="2" stroke-linejoin="round"/>
-              <path d="M73 68Q93 76 108 90Q121 101 127 112" fill="none" stroke="#9cabb1" stroke-width="2" stroke-linecap="round"/>
+              <g transform="translate(82 98) rotate(30)">
+                <path d="M-4 1V62Q-4 66 0 66Q4 66 4 62V1Z" fill="#405660" stroke="#202124" stroke-width="2"/>
+                <path d="M0 10V60" fill="none" stroke="#9cabb1" stroke-width="2" stroke-linecap="round"/>
+                <path d="M-39 8Q-28-4 0-7Q28-4 39 8Q24 5 0 5Q-24 5-39 8Z" fill="#202124" stroke="#202124" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M-29 3Q-18-2 0-3Q18-2 29 3" fill="none" stroke="#9cabb1" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M-5-6Q0-8 5-6V5Q0 6-5 5Z" fill="#405660" stroke="#202124" stroke-width="1.5"/>
+              </g>
             </g>
             <g v-for="slot in 10" :key="slot" class="burst" :class="{ slow: panel.period === 1 }" transform="translate(112 124)" :style="{ '--delay': `${panel.period * .65 + (slot - 1) * panel.period}s` }">
               <rect v-for="index in particles" :key="index" class="particle" x="-3" y="-3" width="7" height="7" rx="1" :fill="index % 2 ? '#009ee0' : '#80cbe9'" :style="particleStyle(worker, slot, index, panel.period)" />
@@ -113,14 +116,21 @@ onBeforeUnmount(() => cancelAnimationFrame(frame))
 .controls { display: flex; gap: 8px; flex: none; }
 button { border: 1px solid #009ee0; border-radius: 7px; background: white; padding: 6px 13px; color: #006e9d; font: inherit; font-size: 13px; cursor: pointer; }
 button:focus-visible { outline: 3px solid #fbd20a; outline-offset: 2px; }
-.pickaxe { transform-origin: 51px 151px; animation: swing var(--period) linear infinite; }
+.pickaxe { transform-origin: 49px 154px; animation: swing var(--period) linear infinite; }
 .block { transform-origin: 112px 125px; animation: incoming var(--period) linear infinite; }
 .particle { opacity: 0; animation: scatter 1s ease-out var(--delay) infinite; }
 .plus { fill: #d82168; font-size: 25px; font-weight: 700; opacity: 0; animation: drift 1s ease-out var(--delay) infinite; }
 .slow .particle { animation-name: scatter-slow; animation-duration: 10s; }
 .slow .plus { animation-name: drift-slow; animation-duration: 10s; }
 .paused .pickaxe, .paused .block, .paused .particle, .paused .plus { animation-play-state: paused; }
-@keyframes swing { 0%, 100% { transform: rotate(-36deg); } 35% { transform: rotate(-46deg); } 65% { transform: rotate(0deg); } 72% { transform: rotate(5deg); } }
+@keyframes swing {
+  0% { transform: rotate(-36deg); animation-timing-function: ease-in-out; }
+  35% { transform: rotate(-46deg); animation-timing-function: ease-in; }
+  65% { transform: rotate(0deg); animation-timing-function: ease-out; }
+  71% { transform: rotate(-8deg); animation-timing-function: ease-in-out; }
+  76% { transform: rotate(-5deg); animation-timing-function: ease-in-out; }
+  100% { transform: rotate(-36deg); }
+}
 @keyframes incoming { 0% { transform: translate(82px, -95px) rotate(50deg) scale(.65); opacity: 0; } 12% { opacity: 1; } 53% { transform: translate(0, 0) rotate(0) scale(1); opacity: 1; } 64% { transform: translate(0, 0) scale(1.06, .92); opacity: 1; } 65%, 100% { opacity: 0; } }
 @keyframes scatter { 0% { transform: translate(0, 0) rotate(0); opacity: 1; } 70%, 100% { transform: translate(var(--x), var(--y)) rotate(var(--r)); opacity: 0; } }
 @keyframes drift { 0% { transform: translate(0, 0); opacity: 1; } 70%, 100% { transform: translate(var(--dx), var(--dy)); opacity: 0; } }
