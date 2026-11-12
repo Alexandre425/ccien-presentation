@@ -104,8 +104,8 @@ test('a compilação estática mantém as interações disponíveis sem rede', a
     for (let slide = 2; slide <= 16; slide++) {
       await page.keyboard.press('ArrowRight')
       await expect(page).toHaveURL(new RegExp(`/${slide}(?:\\?.*)?$`))
-      if ([3, 9, 14].includes(slide)) {
-        const answer = slide === 3 ? page.getByText('Telemóvel', { exact: true }) : slide === 9 ? page.getByText('Mais depressa', { exact: true }) : page.getByText('≈ 31,7 mil milhões de anos', { exact: true })
+      if ([3, 14].includes(slide)) {
+        const answer = slide === 3 ? page.getByText('Telemóvel', { exact: true }) : page.getByText('≈ 31,7 mil milhões de anos', { exact: true })
         await expect(answer.locator('xpath=ancestor::*[contains(@class,"slidev-vclick-target")][1]')).toHaveClass(/slidev-vclick-hidden/)
         await page.keyboard.press('ArrowRight')
         await expect(answer.locator('xpath=ancestor::*[contains(@class,"slidev-vclick-target")][1]')).not.toHaveClass(/slidev-vclick-hidden/)

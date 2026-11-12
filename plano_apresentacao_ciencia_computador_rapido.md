@@ -33,9 +33,9 @@
 | 4 | **Os computadores que nunca vemos** | 2:00 | Servidores e centros de dados; vídeos, jogos online, pesquisas e IA. Explicar intuitivamente que muitas tarefas são calculadas à distância. |
 | 5 | **O que acontece quando um computador é lento?** | 1:30 | Atrasos em jogos, chamadas de vídeo e sistemas de segurança. Não basta conseguir fazer algo: é preciso fazê-lo a tempo. |
 | 6 | **Há 80 anos, um computador ocupava uma sala** | 2:00 | ENIAC (1946): cerca de 30 toneladas e 5 000 somas por segundo. Fotografia histórica. |
-| 7 | **A velocidade dos computadores modernos** | 2:00 | Exemplo de CPU a 3 GHz: 3 mil milhões de ciclos por segundo. Comparação com contas feitas por uma pessoa; explicar que ciclos não são o mesmo que operações. |
-| 8 | **O que mudou graças a essa velocidade?** | 2:00 | Evolução dos jogos, exploração espacial e previsão meteorológica. Combinar imagens do passado e do presente. |
-| 9 | **Como tornar um computador mais rápido?** | 2:00 | Três ideias: executar passos mais depressa; dividir o trabalho por vários processadores; usar métodos mais inteligentes. |
+| 7 | **O que muda quando o relógio bate mais depressa?** | 2:00 | Picaretas a cadências ilustrativas diferentes. Um processador a 3 GHz tem 3 mil milhões de ciclos por segundo; ciclos não são operações. |
+| 8 | **E se trabalharem ao mesmo tempo?** | 2:00 | Uma picareta e quatro picaretas à mesma cadência dividem blocos independentes. Referir também que um método mais inteligente pode precisar de menos passos. |
+| 9 | **O que mudou graças a essa capacidade?** | 2:00 | Evolução dos jogos, exploração espacial e previsão meteorológica. Comparar exemplos do passado e do presente. |
 | 10 | **Experiência: dividir o trabalho** | 3:00 | Contar alunos/objetos individualmente e por grupos. Introduzir processamento paralelo e coordenação. |
 | 11 | **Supercomputadores: o que são?** | 1:30 | Imagem de um centro de supercomputação. Muitos processadores a trabalhar em conjunto para resolver problemas exigentes. |
 | 12 | **Prever tempestades** | 1:30 | Simulações meteorológicas: medições + física + cálculos. Pergunta: «De que serve prever o tempo de amanhã se o cálculo demorar uma semana?» |

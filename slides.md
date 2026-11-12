@@ -119,15 +119,25 @@ layout: none
 
 <div class="deck">
   <div class="eyebrow">A revolução da velocidade</div>
-  <h1>Quantos passos cabem num segundo?</h1>
-  <div class="split">
-    <div><span class="tag">Exemplo de processador</span><div class="number">3 GHz</div><div class="label">3 mil milhões de ciclos de relógio por segundo</div></div>
-    <div class="card"><span class="icon">⏱️</span><strong>Ciclos ≠ operações</strong><p>Um ciclo é uma batida do relógio; o trabalho feito em cada ciclo varia.</p><p>Uma pessoa a fazer uma soma por segundo usa outra medida.</p></div>
-  </div>
+  <h1>O que muda quando o relógio bate <em>mais depressa</em>?</h1>
+  <PickaxeComparison mode="frequency" />
 </div>
 
 <!--
-2:00 — Perguntar quantas somas fariam num segundo. Uma pessoa pode imaginar fazer uma por segundo; um processador a 3 GHz tem 3 mil milhões de ciclos de relógio por segundo. Os números ilustram escalas, mas uma soma humana não é um ciclo: há operações que demoram vários ciclos e um processador pode executar várias operações num ciclo. Não calcular uma razão de velocidade entre estas métricas.
+2:00 — Perguntar que picareta partirá mais blocos. Cada movimento representa uma batida de relógio, não uma operação real. As cadências de uma e dez batidas por segundo são ilustrativas e não representam as frequências do ENIAC ou do iPhone. Um processador a 3 GHz tem 3 mil milhões de ciclos por segundo; ciclos não são somas e o trabalho realizado em cada ciclo varia.
+-->
+---
+layout: none
+---
+
+<div class="deck">
+  <div class="eyebrow">A revolução da velocidade</div>
+  <h1>E se trabalharem <em>ao mesmo tempo</em>?</h1>
+  <PickaxeComparison mode="parallelism" />
+</div>
+
+<!--
+2:00 — Perguntar que grupo partirá mais blocos no mesmo tempo. As quatro picaretas mantêm a mesma cadência que a picareta individual e dividem blocos independentes. O contador reúne os resultados. A animação é uma analogia idealizada: o ENIAC também executava algumas operações em paralelo, e dividir ou juntar trabalho pode demorar tempo. Nem todas as tarefas podem ser divididas. Uma terceira estratégia é escolher um método que precise de menos passos. Preparar a atividade de contagem em grupos.
 -->
 
 ---
@@ -157,25 +167,6 @@ layout: none
 2:00 — Perguntar que diferenças notam entre jogos antigos e atuais. Comparar também missões espaciais e previsões do tempo: com mais capacidade e melhores métodos é possível trabalhar com modelos e dados mais detalhados. As ilustrações são esquemáticas; não são capturas reais. A melhoria resulta de vários avanços, não apenas da frequência do relógio.
 -->
 
----
-layout: none
----
-
-<div class="deck">
-  <div class="eyebrow">Três ideias para acelerar</div>
-  <h1>Como tornar um computador <em>mais rápido</em>?</h1>
-  <p class="subtitle">Antes de explicar: que estratégias escolherias?</p>
-  <div v-click class="grid three">
-    <div class="card"><span class="icon">⚡</span><strong>Mais depressa</strong><p>Reduzir o tempo de cada passo.</p></div>
-    <div class="card"><span class="icon">👥</span><strong>Em equipa</strong><p>Dividir trabalho que possa decorrer em simultâneo.</p></div>
-    <div class="card"><span class="icon">💡</span><strong>Mais inteligente</strong><p>Evitar passos e cálculos desnecessários.</p></div>
-  </div>
-  <p class="prompt">Será que dividir o trabalho chega sempre?</p>
-</div>
-
-<!--
-2:00 — Pedir ideias antes de apresentar as três estratégias. Dar exemplos simples: executar cada passo mais depressa, repartir trabalho independente e escolher um método com menos passos. Preparar a atividade seguinte: dividir também exige coordenação e nem todas as tarefas podem ser feitas em paralelo.
--->
 
 ---
 layout: none

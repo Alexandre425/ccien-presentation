@@ -80,8 +80,10 @@ onBeforeUnmount(() => cancelAnimationFrame(animationFrame))
           <circle v-for="light in lights" :key="`${light.x}-${light.y}`" :cx="light.x" :cy="light.y" r="1.25" :fill="light.color"/>
           <path d="M4 54h3m2 0h3m-8 4h3m2 0h3" stroke="#dce8ed" stroke-width="1.1"/>
         </g>
-        <path d="M430 177l3-1v7l-3 1z M434 176l.7-.25v7l-.7.25z" fill="#dce8ed" stroke="#405660" stroke-width=".15"/>
-        <g fill="#405660"><circle cx="431" cy="178" r=".3"/><circle cx="432" cy="177.7" r=".3"/><circle cx="431" cy="179.5" r=".3"/><circle cx="432" cy="179.2" r=".3"/><circle cx="431" cy="181" r=".3"/><circle cx="432" cy="180.7" r=".3"/><circle cx="431" cy="182.5" r=".3"/><circle cx="432" cy="182.2" r=".3"/></g>
+        <g transform="translate(430 177) skewY(-30.17)">
+          <path d="M0 0h3v7H0z M4 0h.7v7H4z" fill="#dce8ed" stroke="#405660" stroke-width=".15"/>
+          <g fill="#405660"><circle cx="1" cy="1" r=".3"/><circle cx="2" cy="1" r=".3"/><circle cx="1" cy="2.5" r=".3"/><circle cx="2" cy="2.5" r=".3"/><circle cx="1" cy="4" r=".3"/><circle cx="2" cy="4" r=".3"/><circle cx="1" cy="5.5" r=".3"/><circle cx="2" cy="5.5" r=".3"/></g>
+        </g>
         </g>
         <text x="350" y="278" text-anchor="middle" class="svg-small">ENIAC · cubo equivalente ≈ 4,4 m de lado</text>
         <g transform="translate(-34 24)"><path d="M437 184.07l.14-.07.14.07-.14.07z" fill="#009ee0"/><path d="M437 184.07v.08l.14.07.14-.07v-.08l-.14.07z" fill="#007cad"/></g>
