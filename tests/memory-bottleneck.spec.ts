@@ -18,7 +18,8 @@ function captureErrors(page: Page) {
 
 test('controlos, contagem de ritmos diferentes e reinício determinístico', async ({ page }) => {
   const errors = captureErrors(page)
-  await page.goto('/')
+  await page.clock.install()
+  await page.goto('/16')
 
   const diagram = page.getByTestId('diagram')
   const status = page.getByTestId('status')
@@ -26,7 +27,7 @@ test('controlos, contagem de ritmos diferentes e reinício determinístico', asy
   await expect(diagram).toBeVisible()
   await expect(status).toBeVisible()
   await expect(completed).toBeVisible()
-  await page.clock.install()
+  await page.clock.pauseAt(Date.now())
 
   await expect(page.getByRole('button', { name: controls.fast, exact: true })).toBeVisible()
   await expect(page.getByRole('button', { name: controls.slow, exact: true })).toBeVisible()
@@ -49,10 +50,12 @@ test('controlos, contagem de ritmos diferentes e reinício determinístico', asy
   expect(fastCount).toBeGreaterThan(slowCount)
 
   await page.getByRole('button', { name: controls.restart, exact: true }).click()
+  await page.getByRole('button', { name: 'Pausar', exact: true }).click()
   await expect(completed).toHaveText('0')
   const resetDiagram = await diagram.innerHTML()
   await page.clock.runFor(400)
   await page.getByRole('button', { name: controls.restart, exact: true }).click()
+  await page.getByRole('button', { name: 'Pausar', exact: true }).click()
   await expect(completed).toHaveText('0')
   expect(await diagram.innerHTML()).toBe(resetDiagram)
   expect(errors).toEqual([])
@@ -60,10 +63,11 @@ test('controlos, contagem de ritmos diferentes e reinício determinístico', asy
 
 test('composição sem sobreposição nos dois formatos de apresentação', async ({ page }) => {
   const errors = captureErrors(page)
-  await page.goto('/')
+  await page.goto('/16')
   for (const viewport of [{ width: 1920, height: 1080 }, { width: 1280, height: 720 }]) {
     await page.setViewportSize(viewport)
-    const title = await page.locator('h1').boundingBox()
+    await expect(page.locator('#slide-title')).toBeInViewport({ ratio: 1 })
+    const title = await page.locator('#slide-title').boundingBox()
     const diagram = await page.getByTestId('diagram').boundingBox()
     const controlsBox = await page.locator('.controls').boundingBox()
     expect(title).not.toBeNull()
@@ -82,7 +86,7 @@ test('composição sem sobreposição nos dois formatos de apresentação', asyn
 })
 
 test('a compilação estática mantém as interações disponíveis sem rede', async ({ browser }) => {
-  const context = await browser.newContext({ baseURL: 'http://127.0.0.1:4173' })
+  const context = await browser.newContext({ baseURL: 'http://127.0.0.1:4173', permissions: ['screen-wake-lock'] })
   const page = await context.newPage()
   const errors = captureErrors(page)
   const remoteRequests: string[] = []
@@ -97,14 +101,28 @@ test('a compilação estática mantém as interações disponíveis sem rede', a
   })
   try {
     await page.goto('/', { waitUntil: 'networkidle' })
+    for (let slide = 2; slide <= 16; slide++) {
+      await page.keyboard.press('ArrowRight')
+      await expect(page).toHaveURL(new RegExp(`/${slide}(?:\\?.*)?$`))
+      if ([3, 9, 14].includes(slide)) {
+        const answer = slide === 3 ? page.getByText('Telemóvel', { exact: true }) : slide === 9 ? page.getByText('Mais depressa', { exact: true }) : page.getByText('≈ 31,7 mil milhões de anos', { exact: true })
+        await expect(answer.locator('xpath=ancestor::*[contains(@class,"slidev-vclick-target")][1]')).toHaveClass(/slidev-vclick-hidden/)
+        await page.keyboard.press('ArrowRight')
+        await expect(answer.locator('xpath=ancestor::*[contains(@class,"slidev-vclick-target")][1]')).not.toHaveClass(/slidev-vclick-hidden/)
+      }
+    }
     await expect(page.getByTestId('diagram')).toBeVisible()
     await page.getByRole('button', { name: controls.fast, exact: true }).waitFor({ state: 'visible' })
     await page.getByRole('button', { name: controls.slow, exact: true }).waitFor({ state: 'visible' })
-    await context.setOffline(true)
     await page.getByRole('button', { name: controls.slow, exact: true }).click()
     await page.getByRole('button', { name: 'Pausar', exact: true }).click()
     await page.getByRole('button', { name: controls.restart, exact: true }).click()
     await expect(page.getByTestId('status')).toBeVisible()
+    await page.mouse.move(20, 700)
+    await page.getByRole('button', { name: 'Go to next slide' }).click()
+    await expect(page).toHaveURL(/\/17(?:\?.*)?$/)
+    await page.getByRole('button', { name: 'Go to next slide' }).click()
+    await expect(page).toHaveURL(/\/18(?:\?.*)?$/)
     expect(remoteRequests).toEqual([])
     expect(errors).toEqual([])
   }

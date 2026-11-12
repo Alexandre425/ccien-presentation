@@ -1,0 +1,81 @@
+import { expect, test } from '@playwright/test'
+import { mkdir } from 'node:fs/promises'
+
+test('escala, voto, comparação e reinício acessíveis por teclado', async ({ page }) => {
+  await page.goto('/6')
+  const scene = page.getByTestId('scale-scene')
+  const opening = page.getByRole('img', { name: /Ilustração isométrica esquemática/ })
+  const room = page.getByRole('img', { name: /Sala de 15 por 9 metros/ })
+  await expect(opening).toHaveCount(1)
+  await expect(room).toHaveCount(0)
+  await expect(scene).not.toHaveClass(/revealed/)
+  await expect(page.getByTestId('comparison-chart')).toHaveCount(0)
+  await page.getByRole('button', { name: 'Revelar a escala' }).focus()
+  await page.keyboard.press('Enter')
+  await expect(scene).toHaveClass(/revealed/)
+  await expect(opening).toHaveCount(0)
+  await expect(room).toHaveCount(1)
+  await expect(page.getByText('Qual faz mais somas por segundo? Votem!')).toBeVisible()
+  await page.getByRole('button', { name: 'Mostrar comparação' }).focus()
+  await page.keyboard.press('Enter')
+  await expect(page.getByTestId('comparison-chart')).toContainText('≈ 48 mil milhões')
+  await expect(page.getByTestId('comparison-chart')).toContainText('≈ 5 000')
+  await expect(opening).toHaveCount(0)
+  await expect(room).toHaveCount(0)
+  await page.getByRole('button', { name: 'Imaginar 9,6 milhões' }).focus()
+  await page.keyboard.press('Enter')
+  await expect(page.getByTestId('eniac-stack')).toContainText('≈ 935 m')
+  await expect(page.getByTestId('eniac-stack')).toContainText('828 m')
+  await expect(page.getByTestId('comparison-chart')).toHaveCount(0)
+  await expect(room).toHaveCount(0)
+  await page.getByRole('button', { name: 'Reiniciar' }).click()
+  await expect(scene).not.toHaveClass(/revealed/)
+  await expect(page.getByTestId('comparison-chart')).toHaveCount(0)
+  await expect(page.getByTestId('eniac-stack')).toHaveCount(0)
+  await expect(opening).toHaveCount(1)
+  await expect(room).toHaveCount(0)
+})
+
+test('comparação funciona na compilação estática sem pedidos externos', async ({ browser }) => {
+  const context = await browser.newContext({ baseURL: 'http://127.0.0.1:4173', reducedMotion: 'reduce' })
+  const page = await context.newPage()
+  const remote: string[] = []
+  await page.route('**/*', async route => {
+    const url = new URL(route.request().url())
+    if (!['127.0.0.1', 'localhost'].includes(url.hostname)) { remote.push(url.href); await route.abort() }
+    else await route.continue()
+  })
+  try {
+    await page.goto('/')
+    for (let slide = 2; slide <= 6; slide++) {
+      await page.keyboard.press('ArrowRight')
+      await expect(page).toHaveURL(new RegExp(`/${slide}(?:\\?.*)?$`))
+      if (slide === 3) await page.keyboard.press('ArrowRight')
+    }
+    await expect(page).toHaveURL(/\/6(?:\?.*)?$/)
+    await page.getByRole('button', { name: 'Revelar a escala' }).click()
+    await page.getByRole('button', { name: 'Mostrar comparação' }).click()
+    await expect(page.getByTestId('comparison-chart')).toBeVisible()
+    await expect(page.locator('.phone-bar')).toHaveCSS('animation-name', 'none')
+    await page.getByRole('button', { name: 'Imaginar 9,6 milhões' }).click()
+    await expect(page.getByTestId('eniac-stack')).toBeVisible()
+    expect(remote).toEqual([])
+  } finally { await context.close() }
+})
+
+test('capturas do ENIAC @screenshots', async ({ page }) => {
+  await mkdir('artifacts', { recursive: true })
+  await page.setViewportSize({ width: 1920, height: 1080 })
+  await page.goto('/6')
+  await expect(page.getByRole('button', { name: 'Revelar a escala' })).toBeVisible()
+  await page.locator('.historical img').evaluate((image: HTMLImageElement) => image.decode())
+  await page.screenshot({ path: 'artifacts/eniac-inicio.png', animations: 'disabled' })
+  await page.getByRole('button', { name: 'Revelar a escala' }).click()
+  await page.waitForTimeout(2500)
+  await page.screenshot({ path: 'artifacts/eniac-zoom.png' })
+  await page.screenshot({ path: 'artifacts/eniac-escala.png', animations: 'disabled' })
+  await page.getByRole('button', { name: 'Mostrar comparação' }).click()
+  await page.screenshot({ path: 'artifacts/eniac-grafico.png', animations: 'disabled' })
+  await page.getByRole('button', { name: 'Imaginar 9,6 milhões' }).click()
+  await page.screenshot({ path: 'artifacts/eniac-pilha.png', animations: 'disabled' })
+})

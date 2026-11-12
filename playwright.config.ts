@@ -10,6 +10,7 @@ export default defineConfig({
     baseURL,
     ...devices['Desktop Chrome'],
     headless: true,
+    permissions: ['screen-wake-lock'],
     launchOptions: {
       executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH,
     },
