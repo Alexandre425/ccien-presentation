@@ -59,7 +59,7 @@ onBeforeUnmount(() => cancelAnimationFrame(animationFrame))
 
 <template>
   <section class="comparison" aria-label="Comparação entre o ENIAC e um telemóvel">
-    <div class="scene" :class="{ revealed: stage > 0 }" data-testid="scale-scene">
+    <div v-show="stage !== 2" class="scene" :class="{ revealed: stage > 0 }" data-testid="scale-scene">
       <svg class="room" :viewBox="viewBox" role="img" :aria-hidden="stage >= 2" :aria-label="stage === 0 ? 'Ilustração isométrica esquemática do ENIAC junto de um chip A17 Pro; o chip está ampliado.' : 'Sala de 15 por 9 metros, com um cubo equivalente inspirado no ENIAC e um chip A17 Pro à escala, assinalado e ampliado.'">
         <defs>
           <pattern id="room-grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#dce8ed" stroke-width="1"/></pattern>
@@ -97,15 +97,6 @@ onBeforeUnmount(() => cancelAnimationFrame(animationFrame))
         <path d="M609 95v8l27 15 27-15v-8l-27 15Z" fill="#007cad"/>
         <text x="636" y="146" text-anchor="middle" class="svg-small">quadrado ≈ 1 cm de lado</text>
       </svg>
-      <div v-if="stage === 2" class="chart" data-testid="comparison-chart" aria-label="Gráfico linear: cerca de 5 000 somas por segundo no ENIAC e estimativa teórica para o telemóvel">
-        <div class="chart-title">Somas por segundo · escala linear</div>
-        <div class="plot">
-          <div class="eniac-pointer"><span>ENIAC<br><strong>≈ 5 000</strong></span><i>↓</i></div>
-          <div class="phone-column"><span>Telemóvel · estimativa<br><strong>≈ 48 mil milhões</strong></span><div class="phone-bar" /></div>
-          <div class="baseline" />
-        </div>
-        <div class="chart-foot"><strong>≈ 9,6 milhões de vezes</strong></div>
-      </div>
       <div v-if="stage === 3" class="stack" data-testid="eniac-stack">
         <svg viewBox="0 0 760 310" role="img" aria-label="Cubo equivalente de cerca de 9,6 milhões de ENIACs, com 935 metros de altura, comparado com o Burj Khalifa, de 828 metros. Cada cubo pequeno representa cerca de 9 600 ENIACs.">
           <text x="380" y="22" text-anchor="middle" class="svg-label">≈ 9,6 milhões de ENIACs</text>
@@ -126,7 +117,16 @@ onBeforeUnmount(() => cancelAnimationFrame(animationFrame))
         </svg>
       </div>
     </div>
-    <aside class="historical"><img src="/images/eniac.jpg" alt="Fotografia histórica do ENIAC com um operador junto dos painéis"><span>U.S. Army Photo · 1946</span></aside>
+      <div v-if="stage === 2" class="chart" data-testid="comparison-chart" aria-label="Gráfico linear: cerca de 5 000 somas por segundo no ENIAC e estimativa teórica para o telemóvel">
+        <div class="chart-title">Somas por segundo · escala linear</div>
+        <div class="plot">
+          <div class="eniac-pointer"><span>ENIAC<br><strong>≈ 5 000</strong></span><i>↓</i></div>
+          <div class="phone-column"><span>Telemóvel · estimativa<br><strong>≈ 48 mil milhões</strong></span><div class="phone-bar" /></div>
+          <div class="baseline" />
+        </div>
+        <div class="chart-foot"><strong>≈ 9,6 milhões de vezes</strong></div>
+      </div>
+    <aside v-if="stage === 2" class="historical"><img src="/images/eniac.jpg" alt="Fotografia histórica do ENIAC com um operador junto dos painéis"><span>U.S. Army Photo · 1946</span></aside>
     <div class="interaction">
       <p v-if="stage === 0">Quanto espaço separa estes dois computadores?</p>
       <p v-else-if="stage === 1">Qual faz mais somas por segundo? Votem!</p>
@@ -140,23 +140,23 @@ onBeforeUnmount(() => cancelAnimationFrame(animationFrame))
 
 <style scoped>
 .comparison { position: relative; height: 395px; }
-.scene { position: absolute; left: 0; top: 0; width: 760px; height: 310px; overflow: hidden; border-radius: 12px; background: #f7fafb; }
+.scene { position: absolute; left: 50%; top: 0; transform: translateX(-50%); width: 760px; height: 310px; overflow: hidden; border-radius: 12px; background: #f7fafb; }
 .scene svg { display: block; width: 100%; height: 100%; }
 .room { overflow: hidden; }
 .inset { position: absolute; inset: 0; pointer-events: none; }
 .svg-label { font: 700 14px system-ui, sans-serif; fill: #405660; }
 .svg-small { font: 12px system-ui, sans-serif; fill: #50656e; }
-.historical { position: absolute; right: 0; top: 3px; width: 112px; }
-.historical img { width: 112px; height: 85px; object-fit: cover; border-radius: 7px; }
-.historical span { display: block; color: #505b60; font-size: 9px; }
-.interaction { position: absolute; top: 322px; left: 0; display: flex; align-items: center; gap: 10px; }
+.historical { position: absolute; right: 0; top: 0; width: calc(50% - 8px); }
+.historical img { display: block; width: 100%; height: 278px; object-fit: cover; border-radius: 12px; }
+.historical span { display: block; margin-top: 5px; color: #505b60; font-size: 10px; }
+.interaction { position: absolute; top: 322px; left: 0; width: 100%; display: flex; justify-content: center; align-items: center; gap: 10px; }
 .interaction p { margin: 0 14px 0 0; color: #0078ad; font-weight: 700; font-size: 16px; }
 button { border: 1px solid #007cad; border-radius: 7px; color: #006b99; background: #fff; padding: 7px 12px; font: 600 13px system-ui, sans-serif; cursor: pointer; }
 button:focus-visible { outline: 3px solid #d82168; outline-offset: 2px; }
-.chart { position: absolute; inset: 0; background: rgba(255,255,255,.95); padding: 13px 24px; }
+.chart { position: absolute; left: 0; top: 0; width: calc(50% - 8px); height: 310px; border-radius: 12px; background: #f7fafb; padding: 13px 24px; }
 .stack { position: absolute; inset: 0; background: #f7fafb; }
 .chart-title { font-weight: 700; color: #405660; font-size: 16px; }
-.plot { height: 164px; position: relative; margin: 7px 90px 0; }
+.plot { height: 164px; position: relative; margin: 7px 12px 0; }
 .baseline { position: absolute; bottom: 0; left: 0; right: 0; border-bottom: 2px solid #405660; }
 .eniac-pointer { position: absolute; bottom: 3px; left: 12%; color: #405660; text-align: center; font-size: 13px; }
 .eniac-pointer i { display: block; color: #d82168; font-size: 19px; line-height: 18px; font-style: normal; }
