@@ -95,7 +95,7 @@ onBeforeUnmount(() => cancelAnimationFrame(animationFrame))
         <rect x="555" y="45" width="162" height="123" rx="10" fill="#fff" stroke="#009ee0" stroke-width="2"/>
         <text x="636" y="65" text-anchor="middle" class="svg-small">A17 PRO · AMPLIAÇÃO</text>
         <rect x="604" y="73" width="64" height="54" rx="8" fill="#f2f6f8" stroke="#839ba6" stroke-width="1.5"/>
-        <path d="M609 95l27-15 27 15-27 15Z" fill="#009ee0" stroke="#007cad" stroke-width="2"/>
+        <path d="M609 95l27-15 27 15-27 15Z" fill="#009ee0"/>
         <path d="M609 95v8l27 15 27-15v-8l-27 15Z" fill="#007cad"/>
         <text x="636" y="146" text-anchor="middle" class="svg-small">quadrado ≈ 1 cm de lado</text>
       </svg>
