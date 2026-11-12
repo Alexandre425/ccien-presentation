@@ -3,6 +3,13 @@ import { ref } from 'vue'
 
 // Question, scale, vote result, and the equivalent stack.
 const stage = ref(0)
+// Draw the rear cubes first, so nearer cubes cover them as the stack forms.
+const cubes = Array.from({ length: 1000 }, (_, index) => {
+  const z = 9 - Math.floor(index / 100)
+  const y = Math.floor((index % 100) / 10)
+  const x = index % 10
+  return { x, y, z, delay: y * 0.3 + (x + (9 - z)) * 0.022 }
+})
 function advance() { stage.value = Math.min(stage.value + 1, 3) }
 function reset() { stage.value = 0 }
 </script>
@@ -51,21 +58,21 @@ function reset() { stage.value = 0 }
         <div class="chart-foot"><strong>≈ 9,6 milhões de vezes</strong></div>
       </div>
       <div v-if="stage === 3" class="stack" data-testid="eniac-stack">
-        <svg viewBox="0 0 760 310" role="img" aria-label="Cubo equivalente de cerca de 9,6 milhões de ENIACs, com 935 metros de altura, comparado com o Burj Khalifa, de 828 metros. A grelha é ilustrativa.">
-          <defs><pattern id="stack-grid" width="13" height="13" patternUnits="userSpaceOnUse"><path d="M13 0H0V13" fill="none" stroke="#6f99aa" stroke-width=".7"/></pattern></defs>
+        <svg viewBox="0 0 760 310" role="img" aria-label="Cubo equivalente de cerca de 9,6 milhões de ENIACs, com 935 metros de altura, comparado com o Burj Khalifa, de 828 metros.">
           <text x="380" y="22" text-anchor="middle" class="svg-label">≈ 9,6 milhões de ENIACs</text>
           <!-- Front elevations share y=240. 195:172.7 = 935:828. -->
-          <path d="M125 45l30-18h195l-30 18z" fill="#edf5f8" stroke="#405660" stroke-width="2"/>
-          <path d="M125 45l30-18h195l-30 18z" fill="url(#stack-grid)"/>
-          <path d="M320 45l30-18v195l-30 18z" fill="#a9c0cb" stroke="#405660" stroke-width="2"/>
-          <path d="M320 45l30-18v195l-30 18z" fill="url(#stack-grid)"/>
-          <rect x="125" y="45" width="195" height="195" fill="#dce8ed" stroke="#405660" stroke-width="2"/>
-          <rect x="125" y="45" width="195" height="195" fill="url(#stack-grid)"/>
+          <g v-for="cube in cubes" :key="`${cube.x}-${cube.y}-${cube.z}`" :transform="`translate(${125 + cube.x * 19.5 + cube.z * 3} ${240 - (cube.y + 1) * 19.5 - cube.z * 1.8}) scale(.5)`">
+            <g class="falling-cube" :style="{ animationDelay: `${cube.delay}s` }">
+              <path d="M0 0l6-3.6h39L39 0z" fill="#edf5f8"/>
+              <path d="M39 0l6-3.6v39L39 39z" fill="#a9c0cb"/>
+              <path d="M0 0h39v39H0z" fill="#dce8ed"/>
+              <path d="M0 0l6-3.6h39v39L39 39H0zM0 0h39v39M39 0l6-3.6" fill="none" stroke="#6f99aa" stroke-width=".8" stroke-linejoin="round"/>
+            </g>
+          </g>
           <image href="/images/burj-khalifa-silhouette.png" x="444" y="67.3" width="172.7" height="172.7"/>
           <path d="M95 240h510" stroke="#405660" stroke-width="2"/>
           <text x="222" y="259" text-anchor="middle" class="svg-label">Cubo · ≈ 935 m</text>
           <text x="530" y="259" text-anchor="middle" class="svg-label">Burj Khalifa · 828 m</text>
-          <text x="222" y="280" text-anchor="middle" class="svg-small">Grelha ilustrativa · não mostra cada ENIAC</text>
         </svg>
       </div>
     </div>
@@ -108,5 +115,13 @@ button:focus-visible { outline: 3px solid #d82168; outline-offset: 2px; }
 .phone-bar { margin: 5px auto 0; height: 105px; width: 76px; background: #009ee0; transform-origin: bottom; animation: grow 1.8s ease-out both; }
 .chart-foot { margin-top: 14px; color: #202124; font-size: 13px; }
 @keyframes grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
-@media (prefers-reduced-motion: reduce) { .room { transition: none; } .phone-bar { animation: none; } }
+@keyframes cube-fall {
+  0% { opacity: 0; transform: translateY(-100px); animation-timing-function: ease-in; }
+  15% { opacity: 1; }
+  70% { transform: translateY(0); animation-timing-function: ease-out; }
+  84% { transform: translateY(-7px); animation-timing-function: ease-in; }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.falling-cube { animation: cube-fall .7s both; }
+@media (prefers-reduced-motion: reduce) { .room { transition: none; } .phone-bar, .falling-cube { animation: none; } }
 </style>
