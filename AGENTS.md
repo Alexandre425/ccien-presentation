@@ -1,52 +1,50 @@
-# Convenções para agentes
+ # Agent guidelines
 
-## Âmbito e manutenção
+## Scope and maintenance
 
-- A apresentação final destina-se a alunos do 8.º ano, com 13–14 anos. Tem a duração prevista de 30 minutos e 18 diapositivos.
-- Siga `plano_apresentacao_ciencia_computador_rapido.md` para a estrutura, os conteúdos e as atividades da apresentação.
-- O objetivo é despertar curiosidade sobre os computadores do quotidiano. Mostre porque importa a velocidade e como a investigação pode melhorar o desempenho e a eficiência.
-- A mensagem principal vai além dos jogos: computadores melhores ajudam a compreender o mundo e a resolver problemas reais. Termine com a ideia «fazer mais com menos».
-- O projeto contém atualmente um diapositivo de teste sobre a espera pelos dados. Não confunda o âmbito deste protótipo com o objetivo da apresentação final.
-- Use português europeu em todo o texto visível ao público.
-- Mantenha o conteúdo dos diapositivos em `slides.md` e o comportamento visual reutilizável em componentes Vue.
-- Preserve o tema visual nos diapositivos futuros. Evite dependências desnecessárias.
-- Mantenha os recursos necessários à apresentação locais para permitir a utilização offline. Não acrescente dependências de CDN nem recursos remotos.
+- The final presentation is for 8th-grade students aged 13–14. It should last 30 minutes and contain 18 slides.
+- The goal is to spark curiosity about the computers people use every day. Show why speed matters and how research can improve performance and efficiency.
+- The main message goes beyond games: better computers help us understand the world and solve real problems. End with the idea “do more with less”.
+- The project currently contains a test slide about waiting for data. Do not confuse this prototype’s scope with the goal of the final presentation.
+- Use European Portuguese for all text shown to the audience.
+- Keep slide content in `slides.md`. Keep reusable visual behavior in Vue components.
+- Preserve the visual theme on future slides. Avoid unnecessary dependencies.
+- Keep all presentation resources local so the presentation works offline. Do not add CDN dependencies or remote resources.
 
-## Orientações pedagógicas
+## Teaching guidance
 
-- Faça perguntas antes de explicar conceitos. Inclua as pequenas atividades previstas no plano.
-- Apresente uma ideia clara por diapositivo. Prefira imagens, números legíveis e pouco texto.
-- Explique a computação através de exemplos familiares, ciência e problemas reais. Converta números grandes em comparações reconhecíveis.
-- Distinga analogias de medições. Não confunda ciclos com operações nem apresente resultados de testes como velocidades de todas as tarefas.
-- Apresente a investigação pessoal como uma resposta aos limites de desempenho e energia. Evite detalhes técnicos desnecessários na exposição principal.
-- Verifique os números, as fontes e as licenças dos materiais antes da apresentação. Prepare uma alternativa sem vídeo nem Internet.
+- Ask questions before explaining concepts. Include the short activities in the plan.
+- Present one clear idea per slide. Prefer images, readable numbers, and little text.
+- Explain computing through familiar examples, science, and real problems. Relate large numbers to comparisons people recognize.
+- Avoid being too technical, and do not require extreme accuracy. It is better to be slightly inaccurate (e.g. pretend 1 GHz means 1 billion sums per second) than to add disclaimers that distract from the main idea.
+- Present personal research as a response to performance and energy limits. Avoid unnecessary technical detail in the main presentation.
+- Check figures, sources, and licenses before the presentation. Prepare an alternative that does not need video or Internet access.
 
-## Componente e interação
+## Component and interaction
 
-- `components/MemoryBottleneck.vue` contém o conteúdo e os controlos deste diapositivo.
-- Use Vue com TypeScript e SVG para a visualização. Mantenha o diagrama compreensível e as interações acessíveis por teclado e com nomes acessíveis estáveis.
-- A animação é uma analogia explicativa, não um benchmark nem uma simulação quantitativa. Mantenha a sua evolução determinística; pausar/continuar e reiniciar devem funcionar de forma previsível, e reiniciar deve restaurar o estado inicial.
-- Utilize sempre técnicas de animação apelativas. Easing, bounces, e outros.
-- Preserve os nomes acessíveis dos controlos. Verifique as interações por inspeção e com feedback dos utilizadores.
+- `components/MemoryBottleneck.vue` contains this slide’s content and controls.
+- Use Vue with TypeScript and SVG for the visualization. Keep the diagram clear. Make interactions keyboard-accessible and give them stable accessible names.
+- The animation is an explanatory analogy, not a benchmark or a quantitative simulation. Keep its progression deterministic. Pause, resume, and restart must work predictably. Restart must restore the initial state.
+- Always use engaging animation techniques, such as easing and bounce effects.
+- Preserve the controls’ accessible names. Check interactions by inspection and with user feedback.
 
-## Verificação e artefactos
+## Verification and artifacts
 
-- Use pnpm via Corepack e respeite o lockfile: `pnpm install --frozen-lockfile`.
-- Verifique as alterações por inspeção no navegador e recolha feedback dos utilizadores. Teste também a navegação por teclado e os estados interativos afetados.
-- Para inspeção sem interface gráfica, inicie `corepack pnpm dev` e use a ferramenta de navegador em modo headless. Navegue pelos diapositivos e teste os controlos afetados.
-- Capture e inspecione imagens com a ferramenta de navegador. Aguarde que o diapositivo e os estados necessários estejam visíveis antes de capturar.
-- Não instale uma ferramenta de testes de navegador no projeto para estas verificações. O feedback dos utilizadores complementa a inspeção.
-- Para cada alteração visual, compile, abra no navegador, capture imagens, inspecione e corrija os problemas.
-- Execute `pnpm build` quando for relevante. Guarde as capturas em `artifacts/`.
-- Não inclua capturas geradas nem outros artefactos de build no controlo de versões, salvo pedido explícito.
-- O build estático deve poder ser servido localmente para uma apresentação sem Internet. Verifique que os recursos necessários não dependem da rede.
-- Se criar commits, mantenha cada commit pequeno e limitado a uma alteração coerente.
+- Use pnpm through Corepack and follow the lockfile: `pnpm install --frozen-lockfile`.
+- Check changes in a browser and collect user feedback. Also test keyboard navigation and the affected interactive states.
+- For headless inspection, start `corepack pnpm dev` and use the headless browser tool. Navigate through the slides and test the affected controls.
+- Capture and inspect images with the browser tool. Wait until the slide and required states are visible before capturing.
+- Do not install a browser testing tool in the project for these checks. User feedback complements inspection.
+- For every visual change, build the project, open it in a browser, capture images, inspect them, and fix any problems.
+- Run `pnpm build` when relevant. Save captures in `artifacts/`.
+- Do not commit generated captures or other build artifacts unless explicitly requested.
+- The static build must work when served locally for a presentation without Internet access. Check that required resources do not depend on the network.
+- If you create commits, keep each commit small and limited to one coherent change.
 
-## Regras de estilo
+## Style rules
 
-- Não usar tipos de letra serifadas.
-- Limitar o uso de cores a uma paleta reduzida.
-- Use fundo branco, texto preto ou cinzento-escuro e azul `#009ee0` para os destaques. Se for necessário contraste adicional, use apenas `#d82168` e `#fbd20a`.
-- Use a página 1 do PDF do modelo na abertura, a página 3 no encerramento e, sempre que possível, a página 2 como fundo dos diapositivos. Mantenha os conteúdos legíveis sobre o fundo.
-- Uma ideia chave por diapositivo.
-- Evitar texto corrido. Comunicar ideias com imagens, o resto é falado.
+- Do not use serif fonts.
+- Use a limited color palette.
+- Use a white background, black or dark-gray text, and blue `#009ee0` for highlights. Use only `#d82168` and `#fbd20a` for additional contrast, if needed.
+- Use one key idea per slide.
+- Avoid paragraphs. Communicate ideas with images; the rest is explained aloud.
