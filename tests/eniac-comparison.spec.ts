@@ -73,6 +73,7 @@ test('capturas do ENIAC @screenshots', async ({ page }) => {
   await page.getByRole('button', { name: 'Revelar a escala' }).click()
   await page.waitForTimeout(2500)
   await page.screenshot({ path: 'artifacts/eniac-zoom.png' })
+  await expect(page.locator('.room')).toHaveAttribute('viewBox', '0 0 760 310', { timeout: 6000 })
   await page.screenshot({ path: 'artifacts/eniac-escala.png', animations: 'disabled' })
   await page.getByRole('button', { name: 'Mostrar comparação' }).click()
   await page.screenshot({ path: 'artifacts/eniac-grafico.png', animations: 'disabled' })

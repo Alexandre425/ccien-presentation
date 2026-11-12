@@ -11,7 +11,6 @@
 - Mantenha o conteúdo dos diapositivos em `slides.md` e o comportamento visual reutilizável em componentes Vue.
 - Preserve o tema visual nos diapositivos futuros. Evite dependências desnecessárias.
 - Mantenha os recursos necessários à apresentação locais para permitir a utilização offline. Não acrescente dependências de CDN nem recursos remotos.
-- Atualize o README quando alterar os passos de instalação, desenvolvimento, compilação, testes, captura de ecrã ou apresentação offline.
 
 ## Orientações pedagógicas
 
@@ -27,6 +26,7 @@
 - `components/MemoryBottleneck.vue` contém o conteúdo e os controlos deste diapositivo.
 - Use Vue com TypeScript e SVG para a visualização. Mantenha o diagrama compreensível e as interações acessíveis por teclado e com nomes acessíveis estáveis.
 - A animação é uma analogia explicativa, não um benchmark nem uma simulação quantitativa. Mantenha a sua evolução determinística; pausar/continuar e reiniciar devem funcionar de forma previsível, e reiniciar deve restaurar o estado inicial.
+- Utilize sempre técnicas de animação apelativas. Easing, bounces, e outros.
 - Preserve os nomes acessíveis dos controlos e os seletores de estado `data-testid` estabelecidos pelos testes. Ao alterar um contrato, atualize os testes correspondentes em conjunto.
 
 ## Verificação e artefactos
