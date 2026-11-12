@@ -124,7 +124,7 @@ layout: none
 </div>
 
 <!--
-2:00 — Perguntar que picareta partirá mais blocos. Cada movimento representa uma batida de relógio, não uma operação real. A ponta da picareta atinge aproximadamente o centro do bloco e ressalta antes de regressar. As cadências de uma e dez batidas por segundo são ilustrativas e não representam as frequências do ENIAC ou do iPhone. Um processador a 3 GHz tem 3 mil milhões de ciclos por segundo; ciclos não são somas e o trabalho realizado em cada ciclo varia.
+1:30 — Perguntar que picareta partirá mais blocos. Cada movimento representa uma batida de relógio, não uma operação real. A ponta da picareta atinge aproximadamente o centro do bloco e ressalta antes de regressar. As cadências de uma e dez batidas por segundo são ilustrativas e não representam as frequências do ENIAC ou do iPhone. Um processador a 3 GHz tem 3 mil milhões de ciclos por segundo; ciclos não são somas e o trabalho realizado em cada ciclo varia.
 -->
 ---
 layout: none
@@ -137,7 +137,21 @@ layout: none
 </div>
 
 <!--
-2:00 — Perguntar que grupo partirá mais blocos no mesmo tempo. As quatro picaretas mantêm a mesma cadência que a picareta individual e dividem blocos independentes. O contador reúne os resultados. A animação é uma analogia idealizada: o ENIAC também executava algumas operações em paralelo, e dividir ou juntar trabalho pode demorar tempo. Nem todas as tarefas podem ser divididas. Uma terceira estratégia é escolher um método que precise de menos passos. Preparar a atividade de contagem em grupos.
+1:30 — Perguntar que grupo partirá mais blocos no mesmo tempo. As quatro picaretas mantêm a mesma cadência que a picareta individual e dividem blocos independentes. O contador reúne os resultados. A animação é uma analogia idealizada: o ENIAC também executava algumas operações em paralelo, e dividir ou juntar trabalho pode demorar tempo. Nem todas as tarefas podem ser divididas. Uma terceira estratégia é escolher um método que precise de menos passos.
+-->
+
+---
+layout: none
+---
+
+<div class="deck">
+  <div class="eyebrow">Dentro do computador</div>
+  <h1>Como é que funciona o <em>processador</em>?</h1>
+  <ProcessorWalkthrough />
+</div>
+
+<!--
+1:00 — Perguntar primeiro como um processador sabe o que fazer. Pedir à turma que preveja o resultado. Avançar uma instrução de cada vez: ler os valores 7 e 5 dos endereços 1 e 2, somá-los e guardar 12 no endereço 3. Cada instrução animada demora cerca de 4,5 segundos. Explicar que os registos guardam valores perto das unidades e que o endereço identifica uma posição na memória. Observar como a leitura e a soma usam unidades diferentes. Pausar, continuar e reiniciar com os botões ou o teclado. O programa, os nomes e os percursos são uma simplificação ilustrativa, não uma descrição exata de um processador real. Sem animação, seguir as instruções e os valores oralmente.
 -->
 
 ---
@@ -184,7 +198,7 @@ layout: none
 </div>
 
 <!--
-10 — 3:00. Depois das três formas de acelerar, perguntar primeiro qual das duas contagens será mais rápida. Uma pessoa conta todos os alunos; cronometrar ou observar. Dividir a turma em quatro zonas sem sobreposição: uma pessoa por zona conta, simultaneamente; recolher e somar os quatro resultados. Comparar e perguntar onde houve espera ou possibilidade de erro. Se não for possível contar a turma, usar objetos ou marcas no quadro. Dividir tarefas independentes é paralelismo; juntar resultados e coordenar também custa tempo, pelo que quatro grupos não garantem uma aceleração de quatro vezes. Transição: imaginem milhares de processadores a colaborar.
+11 — 3:00. Depois das três formas de acelerar, perguntar primeiro qual das duas contagens será mais rápida. Uma pessoa conta todos os alunos; cronometrar ou observar. Dividir a turma em quatro zonas sem sobreposição: uma pessoa por zona conta, simultaneamente; recolher e somar os quatro resultados. Comparar e perguntar onde houve espera ou possibilidade de erro. Se não for possível contar a turma, usar objetos ou marcas no quadro. Dividir tarefas independentes é paralelismo; juntar resultados e coordenar também custa tempo, pelo que quatro grupos não garantem uma aceleração de quatro vezes. Transição: imaginem milhares de processadores a colaborar.
 -->
 
 ---
@@ -202,7 +216,7 @@ layout: none
 </div>
 
 <!--
-11 — 1:30. Perguntar o que imaginam ser um supercomputador e ouvir respostas. A fotografia mostra o Frontier, no Oak Ridge National Laboratory: os armários albergam muitos componentes que colaboram, não uma única caixa mágica. Nem todos os problemas se dividem facilmente. Fotografia: Oak Ridge National Laboratory, https://commons.wikimedia.org/wiki/File:Frontier_supercomputer_(8).jpg , https://creativecommons.org/licenses/by/2.0/ ; apresentada recortada para caber no diapositivo. Transição: para que serve uma equipa destas?
+12 — 1:30. Perguntar o que imaginam ser um supercomputador e ouvir respostas. A fotografia mostra o Frontier, no Oak Ridge National Laboratory: os armários albergam muitos componentes que colaboram, não uma única caixa mágica. Nem todos os problemas se dividem facilmente. Fotografia: Oak Ridge National Laboratory, https://commons.wikimedia.org/wiki/File:Frontier_supercomputer_(8).jpg , https://creativecommons.org/licenses/by/2.0/ ; apresentada recortada para caber no diapositivo. Transição: para que serve uma equipa destas?
 -->
 
 ---
@@ -223,7 +237,7 @@ layout: none
 </div>
 
 <!--
-12 — 1:30. Fazer a pergunta do título antes de explicar. Recolher uma resposta: uma previsão que chega depois da tempestade não permite preparar a população a tempo. Explicar que modelos meteorológicos usam observações e leis físicas para estimar a evolução da atmosfera; são previsões, não certezas. Fonte: ECMWF, https://www.ecmwf.int/en/research/modelling-and-prediction . O esquema é original, não uma imagem da fonte. Transição: a mesma ideia de experimentar num computador também ajuda noutras áreas.
+13 — 1:30. Fazer a pergunta do título antes de explicar. Recolher uma resposta: uma previsão que chega depois da tempestade não permite preparar a população a tempo. Explicar que modelos meteorológicos usam observações e leis físicas para estimar a evolução da atmosfera; são previsões, não certezas. Fonte: ECMWF, https://www.ecmwf.int/en/research/modelling-and-prediction . O esquema é original, não uma imagem da fonte. Transição: a mesma ideia de experimentar num computador também ajuda noutras áreas.
 -->
 
 ---
@@ -245,7 +259,7 @@ layout: none
 </div>
 
 <!--
-13 — 2:00. Perguntar como testar uma ideia antes de fabricar um foguete ou desenvolver um medicamento. Explicar que simulações podem explorar o comportamento do ar em torno de veículos e ajudar a selecionar moléculas candidatas; não demonstram por si só segurança nem eficácia. Continuam a ser necessários testes físicos e experimentais. Fontes: NASA, https://www.nasa.gov/computing/hec/ ; Lin et al., https://pmc.ncbi.nlm.nih.gov/articles/PMC7144386/ . As duas ilustrações são desenhos originais esquemáticos. Transição: quanta capacidade de cálculo pode ter uma destas máquinas?
+14 — 2:00. Perguntar como testar uma ideia antes de fabricar um foguete ou desenvolver um medicamento. Explicar que simulações podem explorar o comportamento do ar em torno de veículos e ajudar a selecionar moléculas candidatas; não demonstram por si só segurança nem eficácia. Continuam a ser necessários testes físicos e experimentais. Fontes: NASA, https://www.nasa.gov/computing/hec/ ; Lin et al., https://pmc.ncbi.nlm.nih.gov/articles/PMC7144386/ . As duas ilustrações são desenhos originais esquemáticos. Transição: quanta capacidade de cálculo pode ter uma destas máquinas?
 -->
 
 ---
@@ -263,7 +277,7 @@ layout: none
 </div>
 
 <!--
-14 — 1:00. Pedir um palpite antes de mostrar a comparação. Um exaFLOP/s corresponde a 10¹⁸ operações de vírgula flutuante por segundo. A uma operação por segundo, 10¹⁸ segundos correspondem aproximadamente a 31,7 mil milhões de anos, usando 365,25 dias por ano. O Frontier atingiu 1,102 exaFLOP/s no teste HPL em 2022; é um resultado num teste específico, não a velocidade de todas as tarefas. Fonte: TOP500, https://www.top500.org/lists/top500/2022/06/highs/ . Transição: alcançar estes resultados também tem custos.
+15 — 1:00. Pedir um palpite antes de mostrar a comparação. Um exaFLOP/s corresponde a 10¹⁸ operações de vírgula flutuante por segundo. A uma operação por segundo, 10¹⁸ segundos correspondem aproximadamente a 31,7 mil milhões de anos, usando 365,25 dias por ano. O Frontier atingiu 1,102 exaFLOP/s no teste HPL em 2022; é um resultado num teste específico, não a velocidade de todas as tarefas. Fonte: TOP500, https://www.top500.org/lists/top500/2022/06/highs/ . Transição: alcançar estes resultados também tem custos.
 -->
 
 ---
@@ -280,7 +294,7 @@ layout: none
 </div>
 
 <!--
-15 — 2:00. Perguntar se basta tornar um computador mais rápido. Ouvir propostas. Algumas simulações continuam demoradas e a eletricidade e o arrefecimento também importam. A estimativa da IEA para 2024 é de cerca de 415 TWh, aproximadamente 1,5% do consumo mundial de eletricidade: abrange todos os centros de dados, não apenas supercomputadores nem apenas IA, e é uma estimativa. Fonte: IEA, Energy and AI (2025), https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai , CC BY 4.0, https://creativecommons.org/licenses/by/4.0/ . Transição: onde podemos procurar desperdícios dentro do próprio computador?
+16 — 2:00. Perguntar se basta tornar um computador mais rápido. Ouvir propostas. Algumas simulações continuam demoradas e a eletricidade e o arrefecimento também importam. A estimativa da IEA para 2024 é de cerca de 415 TWh, aproximadamente 1,5% do consumo mundial de eletricidade: abrange todos os centros de dados, não apenas supercomputadores nem apenas IA, e é uma estimativa. Fonte: IEA, Energy and AI (2025), https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai , CC BY 4.0, https://creativecommons.org/licenses/by/4.0/ . Transição: onde podemos procurar desperdícios dentro do próprio computador?
 -->
 
 ---
@@ -290,7 +304,7 @@ layout: none
 <MemoryBottleneck />
 
 <!--
-16 — 2:00. Perguntar primeiro: «Se o processador é rápido, porque estará parado?» Comparar Dados rápidos e Dados lentos usando os botões; pedir à turma que observe o estado do processador e o trabalho concluído. Usar Pausar/Continuar ou Reiniciar se necessário; os controlos também são acessíveis por teclado. A animação é uma analogia, não uma medição nem um benchmark: o processador pode ficar à espera dos dados. Ligar à investigação: procuro identificar obstáculos como este e melhorar software e hardware para fazer mais trabalho em menos tempo e, idealmente, com menos energia. Sem animação, comparar oralmente quatro alunos rápidos que têm de partilhar um único livro. Transição: encontrar e reduzir estes obstáculos ajuda-nos a fazer mais com menos.
+17 — 2:00. Perguntar primeiro: «Se o processador é rápido, porque estará parado?» Comparar Dados rápidos e Dados lentos usando os botões; pedir à turma que observe o estado do processador e o trabalho concluído. Usar Pausar/Continuar ou Reiniciar se necessário; os controlos também são acessíveis por teclado. A animação é uma analogia, não uma medição nem um benchmark: o processador pode ficar à espera dos dados. Ligar à investigação: procuro identificar obstáculos como este e melhorar software e hardware para fazer mais trabalho em menos tempo e, idealmente, com menos energia. Sem animação, comparar oralmente quatro alunos rápidos que têm de partilhar um único livro. Transição: encontrar e reduzir estes obstáculos ajuda-nos a fazer mais com menos.
 -->
 
 ---
@@ -305,7 +319,7 @@ layout: none
 </div>
 
 <!--
-17 — 0:30. Perguntar se preferem computadores mais rápidos ou que gastem menos energia e porquê; aceitar que depende do problema e que podemos procurar ambos. Recuperar previsão do tempo, saúde e energia. Fechar com «fazer mais com menos». Transição: abrir espaço às perguntas.
+18 — 0:30. Perguntar se preferem computadores mais rápidos ou que gastem menos energia e porquê; aceitar que depende do problema e que podemos procurar ambos. Recuperar previsão do tempo, saúde e energia. Fechar com «fazer mais com menos». Transição: abrir espaço às perguntas.
 -->
 
 ---
@@ -315,5 +329,5 @@ layout: none
 <img class="template-cover" src="/template/page-3.png" alt="O que aprendeste hoje? Gostavas de saber mais? Completa, por favor, a ficha." />
 
 <!--
-18 — 1:00. Dar tempo para dúvidas e curiosidades. Se ninguém começar, perguntar oralmente: «O que gostavas que um computador ajudasse a descobrir?» Agradecer à turma. A sequência de tempos dos diapositivos 10–18 soma 14:30; os diapositivos 1–9 do plano somam 15:30, totalizando 30:00.
+19 — 1:00. Dar tempo para dúvidas e curiosidades. Se ninguém começar, perguntar oralmente: «O que gostavas que um computador ajudasse a descobrir?» Agradecer à turma. A apresentação mantém o total planeado de 30 minutos: o novo diapositivo ocupa um minuto, retirado aos dois exemplos anteriores.
 -->
