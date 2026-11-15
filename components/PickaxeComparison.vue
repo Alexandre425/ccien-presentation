@@ -58,7 +58,7 @@ onBeforeUnmount(() => cancelAnimationFrame(frame))
 </script>
 
 <template>
-  <section class="comparison" :class="{ paused: !playing }" :aria-label="mode === 'frequency' ? 'Analogia da frequência do relógio' : 'Analogia do trabalho em paralelo'">
+  <section class="comparison block-comparison" :class="{ paused: !playing }" :aria-label="mode === 'frequency' ? 'Analogia da frequência do relógio' : 'Analogia do trabalho em paralelo'">
     <div :key="run" class="panels">
       <div v-for="(panel, side) in panels" :key="side" class="panel" :style="{ '--period': `${panel.period}s` }">
         <div class="panel-heading"><strong>{{ panel.title }}</strong><span>{{ panel.detail }}</span></div>
@@ -100,22 +100,6 @@ onBeforeUnmount(() => cancelAnimationFrame(frame))
 </template>
 
 <style scoped>
-.comparison { margin-top: 12px; }
-.panels { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.panel { border: 1px solid #cbd8de; border-radius: 14px; overflow: hidden; background: #f8fbfc; }
-.panel-heading { padding: 12px 18px 0; display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
-.panel-heading strong { font-size: 18px; color: #202124; }
-.panel-heading span { font-size: 13px; color: #505b60; }
-.panel svg { display: block; width: 100%; height: 220px; }
-.result { display: flex; align-items: baseline; justify-content: space-between; padding: 3px 18px 10px; color: #505b60; font-size: 13px; }
-.result strong { color: #009ee0; font-size: 23px; font-variant-numeric: tabular-nums; }
-.pool { flex: 1; height: 13px; margin: 0 14px; border: 1px solid #a4c7d4; border-radius: 4px; overflow: hidden; background: white; }
-.pool div { height: 100%; background: #009ee0; transition: width .12s ease-out; }
-.bottom-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 10px; }
-.bottom-row p { margin: 0; color: #505b60; font-size: 13px; }
-.controls { display: flex; gap: 8px; flex: none; }
-button { border: 1px solid #009ee0; border-radius: 7px; background: white; padding: 6px 13px; color: #006e9d; font: inherit; font-size: 13px; cursor: pointer; }
-button:focus-visible { outline: 3px solid #fbd20a; outline-offset: 2px; }
 .pickaxe { transform-origin: 49px 154px; animation: swing var(--period) linear infinite; }
 .block { transform-origin: 112px 125px; animation: incoming var(--period) linear infinite; }
 .particle { opacity: 0; animation: scatter 1s ease-out var(--delay) infinite; }
