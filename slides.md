@@ -13,9 +13,7 @@ fonts:
 
 <img class="template-cover" src="/template/page-1.png" alt="A ciência por trás de um computador rápido" />
 
-<!--
-0:30 — Apresentar o tema. Lançar a pergunta orientadora e deixar a turma pensar: não precisamos de responder já.
--->
+<!-- Opening slide introducing the presentation topic. -->
 
 ---
 layout: none
@@ -33,9 +31,7 @@ layout: none
   <p class="prompt">Levanta a mão e partilha um exemplo.</p>
 </div>
 
-<!--
-2:00 — Perguntar antes de revelar exemplos. Dar tempo para pensarem, pedir mãos no ar e recolher várias respostas espontâneas. Incluir objetos sem teclado ou ecrã.
--->
+<!-- Everyday examples prompt students to identify computers they have used. -->
 
 ---
 layout: none
@@ -57,9 +53,7 @@ layout: none
   </div>
 </div>
 
-<!--
-1:30 — Perguntar onde poderão existir computadores escondidos e recolher exemplos; depois revelar os objetos. Perguntar para que servem: um elevador, por exemplo, usa um controlador para responder aos botões. Reforçar que não é preciso teclado nem ecrã.
--->
+<!-- A click reveals examples of computers without screens or keyboards. -->
 
 ---
 layout: none
@@ -74,9 +68,7 @@ layout: none
   </div>
 </div>
 
-<!--
-2:00 — Perguntar onde está guardado um vídeo antes de ser reproduzido. Explicar que servidores são computadores que prestam serviços através da rede e que algumas tarefas são feitas à distância; outras acontecem no dispositivo. A fotografia mostra um centro de dados.
--->
+<!-- Explains how remote data-center servers provide network services. -->
 
 ---
 layout: none
@@ -93,9 +85,7 @@ layout: none
   <p class="prompt">Não basta conseguir fazer: é preciso fazer a tempo.</p>
 </div>
 
-<!--
-1:30 — Perguntar quando um atraso vos incomodou. Relacionar a rapidez com a utilidade da resposta: num sistema de segurança, um aviso tardio pode chegar demasiado tarde. Em jogos a 60 imagens por segundo, cada imagem dura cerca de 16,7 milissegundos; isto não é a frequência do processador.
--->
+<!-- Shows how delays affect games, calls, and safety systems. -->
 
 ---
 layout: none
@@ -107,11 +97,7 @@ layout: none
   <EniacComparison />
 </div>
 
-<!--
-2:00 — Mostrar o chip e perguntar quanto espaço separa os dois computadores. Revelar a escala: a linha exterior é uma sala de 9 × 15 m, não a dimensão da máquina. O cubo equivalente de cerca de 4,4 m de lado resulta de 10 × 3 × 100 pés de invólucro dos painéis, aproximadamente 85 m³; é uma estimativa grosseira de painéis empilhados, não um volume sólido medido. Fonte: https://en.wikipedia.org/wiki/ENIAC#Components . O quadrado de cerca de 1 cm representa a área aproximada do chip A17 Pro, não dimensões medidas; a ampliação não está à escala. Pedir votos: qual faz mais somas por segundo? Só então mostrar o gráfico. O ENIAC fazia cerca de 5 000 somas decimais/s. Para o A17 Pro, estimamos um máximo teórico para somas binárias independentes: 3 somas por ciclo por núcleo (hipótese, não medição) × (2 núcleos a 3,78 GHz + 4 a 2,11 GHz) ≈ 48 mil milhões/s, cerca de 9,6 milhões de vezes mais. As frequências são máximos indicados, não garantidos simultaneamente; limites térmicos, instruções e outras tarefas alteram o resultado. Não é benchmark nem comparação direta perfeita: decimal e binário são operações diferentes. Transição: ciclos e operações também não são a mesma coisa. Fotografia: U.S. Army Photo, 1946.
-A vista começa junto do chip e afasta-se ao revelar a escala. As luzes dos painéis são uma ilustração esquemática, não uma reprodução histórica. A fotografia histórica aparece ao lado do gráfico. Com movimento reduzido, a sala aparece de imediato.
-Depois, mostrar a pilha: cerca de 9,6 milhões de ENIACs, imaginados como cubos equivalentes, formariam um cubo de aproximadamente 935 m de lado (∛9,6 milhões × 4,4 m). A animação usa 1 000 cubos para representar o conjunto; cada cubo pequeno representa cerca de 9 600 ENIACs. Comparar a altura com os 828 m do Burj Khalifa, não o volume nem a área. Fontes: https://www.burjkhalifa.ae/the-tower/architecture-design e https://files.alnair.ae/uploads/2024/8/c6/2e/c62e9bd8bb527a17a03f6e61a6377bf2.pdf . Esta imagem depende das estimativas anteriores.
--->
+<!-- Compares ENIAC's room-sized installation with a modern chip. The view zooms out to reveal scale, then builds a 1,000-cube comparison; reduced-motion mode skips the zoom. -->
 
 ---
 layout: none
@@ -123,9 +109,7 @@ layout: none
   <PickaxeComparison mode="frequency" />
 </div>
 
-<!--
-1:30 — Perguntar que picareta partirá mais blocos. Cada movimento representa uma batida de relógio, não uma operação real. A ponta da picareta atinge aproximadamente o centro do bloco e ressalta antes de regressar. As cadências de uma e dez batidas por segundo são ilustrativas e não representam as frequências do ENIAC ou do iPhone. Um processador a 3 GHz tem 3 mil milhões de ciclos por segundo; ciclos não são somas e o trabalho realizado em cada ciclo varia.
--->
+<!-- Pickaxe speed illustrates clock frequency; each strike represents one clock tick. -->
 ---
 layout: none
 ---
@@ -136,9 +120,7 @@ layout: none
   <PickaxeComparison mode="parallelism" />
 </div>
 
-<!--
-1:30 — Perguntar que grupo partirá mais blocos no mesmo tempo. As quatro picaretas mantêm a mesma cadência que a picareta individual e dividem blocos independentes. O contador reúne os resultados. A animação é uma analogia idealizada: o ENIAC também executava algumas operações em paralelo, e dividir ou juntar trabalho pode demorar tempo. Nem todas as tarefas podem ser divididas. Uma terceira estratégia é escolher um método que precise de menos passos.
--->
+<!-- Four pickaxes work on separate blocks at the same rate; a counter combines their results. -->
 
 ---
 layout: none
@@ -150,9 +132,7 @@ layout: none
   <ProcessorWalkthrough />
 </div>
 
-<!--
-1:00 — Perguntar primeiro como um processador sabe o que fazer. Pedir à turma que preveja o resultado. Avançar uma instrução de cada vez: ler os valores 7 e 5 dos endereços 1 e 2, somá-los e guardar 12 no endereço 3. Cada instrução animada demora cerca de 4,5 segundos. Explicar que os registos guardam valores perto das unidades e que o endereço identifica uma posição na memória. Observar como a leitura e a soma usam unidades diferentes. Pausar, continuar e reiniciar com os botões ou o teclado. O programa, os nomes e os percursos são uma simplificação ilustrativa, não uma descrição exata de um processador real. Sem animação, seguir as instruções e os valores oralmente.
--->
+<!-- Animated walkthrough reads 7 and 5, adds them, and stores 12; pause, resume, and restart are available. -->
 
 ---
 layout: none
@@ -177,9 +157,7 @@ layout: none
   </div>
 </div>
 
-<!--
-1:00 — Perguntar quantos componentes imaginam encontrar dentro de um processador antes de reproduzir o vídeo. A ampliação mostra a complexidade física de um chip real, em contraste com o esquema simplificado do diapositivo anterior. Como exemplo separado, o chip A17 Pro do iPhone 15 Pro tem 19 mil milhões de transístores: a contar um por segundo, demoraria cerca de 602 anos. Perguntar como podemos compreender tanta complexidade: a modelação de desempenho usa modelos simplificados para estudar onde se perde tempo e como melhorar. Fonte: https://www.tomshardware.com/news/apple-a17-pro-3nm-iphone-15-pro . O vídeo fornecido não tem áudio nesta apresentação. Confirmar a origem e a licença antes da apresentação.
--->
+<!-- Chip footage contrasts with the simplified processor diagram; the A17 Pro example highlights transistor scale. -->
 
 
 ---
@@ -197,9 +175,7 @@ layout: none
 <p style="margin-top:32px;color:#4b5054;font-size:21px">O que ganhámos? O que tivemos de coordenar?</p>
 </div>
 
-<!--
-11 — 3:00. Depois das três formas de acelerar, perguntar primeiro qual das duas contagens será mais rápida. Uma pessoa conta todos os alunos; cronometrar ou observar. Dividir a turma em quatro zonas sem sobreposição: uma pessoa por zona conta, simultaneamente; recolher e somar os quatro resultados. Comparar e perguntar onde houve espera ou possibilidade de erro. Se não for possível contar a turma, usar objetos ou marcas no quadro. Dividir tarefas independentes é paralelismo; juntar resultados e coordenar também custa tempo, pelo que quatro grupos não garantem uma aceleração de quatro vezes. Transição: imaginem milhares de processadores a colaborar.
--->
+<!-- Classroom activity compares one person counting everyone with four groups counting separate sections. -->
 
 ---
 layout: none
@@ -215,9 +191,7 @@ layout: none
 <p style="font-size:12px;color:#4b5054;margin-top:10px">Frontier · Oak Ridge National Laboratory · CC BY 2.0</p>
 </div>
 
-<!--
-12 — 1:30. Perguntar o que imaginam ser um supercomputador e ouvir respostas. A fotografia mostra o Frontier, no Oak Ridge National Laboratory: os armários albergam muitos componentes que colaboram, não uma única caixa mágica. Nem todos os problemas se dividem facilmente. Fotografia: Oak Ridge National Laboratory, https://commons.wikimedia.org/wiki/File:Frontier_supercomputer_(8).jpg , https://creativecommons.org/licenses/by/2.0/ ; apresentada recortada para caber no diapositivo. Transição: para que serve uma equipa destas?
--->
+<!-- Frontier photo introduces a supercomputer as many collaborating processors. -->
 
 ---
 layout: none
@@ -236,9 +210,7 @@ layout: none
 <p style="font-size:20px;color:#4b5054">Uma previsão útil tem de chegar antes da tempestade.</p>
 </div>
 
-<!--
-13 — 1:30. Fazer a pergunta do título antes de explicar. Recolher uma resposta: uma previsão que chega depois da tempestade não permite preparar a população a tempo. Explicar que modelos meteorológicos usam observações e leis físicas para estimar a evolução da atmosfera; são previsões, não certezas. Fonte: ECMWF, https://www.ecmwf.int/en/research/modelling-and-prediction . O esquema é original, não uma imagem da fonte. Transição: a mesma ideia de experimentar num computador também ajuda noutras áreas.
--->
+<!-- Diagram shows measurements and physics calculations producing a weather forecast. -->
 
 ---
 layout: none
@@ -258,9 +230,7 @@ layout: none
 <p style="font-size:20px;color:#009ee0;margin-top:22px">Simular ajuda a escolher experiências — não substitui testes reais.</p>
 </div>
 
-<!--
-14 — 2:00. Perguntar como testar uma ideia antes de fabricar um foguete ou desenvolver um medicamento. Explicar que simulações podem explorar o comportamento do ar em torno de veículos e ajudar a selecionar moléculas candidatas; não demonstram por si só segurança nem eficácia. Continuam a ser necessários testes físicos e experimentais. Fontes: NASA, https://www.nasa.gov/computing/hec/ ; Lin et al., https://pmc.ncbi.nlm.nih.gov/articles/PMC7144386/ . As duas ilustrações são desenhos originais esquemáticos. Transição: quanta capacidade de cálculo pode ter uma destas máquinas?
--->
+<!-- Illustrates computer simulations for rockets and medicine, alongside the need for real-world testing. -->
 
 ---
 layout: none
@@ -276,9 +246,7 @@ layout: none
 </div>
 </div>
 
-<!--
-15 — 1:00. Pedir um palpite antes de mostrar a comparação. Um exaFLOP/s corresponde a 10¹⁸ operações de vírgula flutuante por segundo. A uma operação por segundo, 10¹⁸ segundos correspondem aproximadamente a 31,7 mil milhões de anos, usando 365,25 dias por ano. O Frontier atingiu 1,102 exaFLOP/s no teste HPL em 2022; é um resultado num teste específico, não a velocidade de todas as tarefas. Fonte: TOP500, https://www.top500.org/lists/top500/2022/06/highs/ . Transição: alcançar estes resultados também tem custos.
--->
+<!-- A click reveals the time needed to count to 10¹⁸ at one operation per second. -->
 
 ---
 layout: none
@@ -293,9 +261,7 @@ layout: none
 </div>
 </div>
 
-<!--
-16 — 2:00. Perguntar se basta tornar um computador mais rápido. Ouvir propostas. Algumas simulações continuam demoradas e a eletricidade e o arrefecimento também importam. A estimativa da IEA para 2024 é de cerca de 415 TWh, aproximadamente 1,5% do consumo mundial de eletricidade: abrange todos os centros de dados, não apenas supercomputadores nem apenas IA, e é uma estimativa. Fonte: IEA, Energy and AI (2025), https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai , CC BY 4.0, https://creativecommons.org/licenses/by/4.0/ . Transição: onde podemos procurar desperdícios dentro do próprio computador?
--->
+<!-- Connects computing demand with data-center electricity use and heat. -->
 
 ---
 layout: none
@@ -303,9 +269,7 @@ layout: none
 
 <MemoryBottleneck />
 
-<!--
-17 — 2:00. Perguntar primeiro: «Se o processador é rápido, porque estará parado?» Comparar Dados rápidos e Dados lentos usando os botões; pedir à turma que observe o estado do processador e o trabalho concluído. Usar Pausar/Continuar ou Reiniciar se necessário; os controlos também são acessíveis por teclado. A animação é uma analogia, não uma medição nem um benchmark: o processador pode ficar à espera dos dados. Ligar à investigação: procuro identificar obstáculos como este e melhorar software e hardware para fazer mais trabalho em menos tempo e, idealmente, com menos energia. Sem animação, comparar oralmente quatro alunos rápidos que têm de partilhar um único livro. Transição: encontrar e reduzir estes obstáculos ajuda-nos a fazer mais com menos.
--->
+<!-- Interactive animation compares fast and slow data delivery; controls support pause, resume, and restart. It illustrates processor waiting, not a benchmark. -->
 
 ---
 layout: none
@@ -318,9 +282,7 @@ layout: none
 <p style="font-size:22px;margin-top:48px;color:#009ee0">Mais resultados, menos tempo e, idealmente, menos energia.</p>
 </div>
 
-<!--
-18 — 0:30. Perguntar se preferem computadores mais rápidos ou que gastem menos energia e porquê; aceitar que depende do problema e que podemos procurar ambos. Recuperar previsão do tempo, saúde e energia. Fechar com «fazer mais com menos». Transição: abrir espaço às perguntas.
--->
+<!-- Concludes with the goal of doing more with less time and energy. -->
 
 ---
 layout: none
@@ -328,6 +290,4 @@ layout: none
 
 <img class="template-cover" src="/template/page-3.png" alt="O que aprendeste hoje? Gostavas de saber mais? Completa, por favor, a ficha." />
 
-<!--
-19 — 1:00. Dar tempo para dúvidas e curiosidades. Se ninguém começar, perguntar oralmente: «O que gostavas que um computador ajudasse a descobrir?» Agradecer à turma. A apresentação mantém o total planeado de 30 minutos: o novo diapositivo ocupa um minuto, retirado aos dois exemplos anteriores.
--->
+<!-- Closing slide with a student reflection worksheet. -->
