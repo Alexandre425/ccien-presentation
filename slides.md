@@ -140,6 +140,18 @@ layout: none
 
 <div class="deck">
   <div class="eyebrow">Dentro do computador</div>
+  <h1>Uma picareta rápida chega para trabalhar <em>depressa</em>?</h1>
+  <MemoryAccessComparison />
+</div>
+
+<!-- Equal delivery rates contrast using every block with discarding alternating blocks. -->
+
+---
+layout: none
+---
+
+<div class="deck">
+  <div class="eyebrow">Dentro do computador</div>
   <h1>Como é um processador <em>por dentro</em>?</h1>
   <div style="display:flex;align-items:center;justify-content:center;gap:70px;margin-top:12px">
     <video controls playsinline preload="metadata" @keydown.stop aria-label="Ampliação de um processador de iPhone em silício" style="display:block;height:380px;max-width:45%">
