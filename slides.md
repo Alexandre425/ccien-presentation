@@ -159,26 +159,26 @@ layout: none
 ---
 
 <div class="deck">
-  <div class="eyebrow">A revolução da velocidade</div>
-  <h1>O que mudou com mais capacidade de cálculo?</h1>
-  <p class="subtitle">Do passado ao presente · comparação ilustrativa</p>
-  <div class="evolution">
-    <div class="evolution-head">ÁREA</div><div class="evolution-head">ANTES</div><div class="evolution-head">HOJE</div>
-    <strong>Jogos</strong>
-    <div><svg viewBox="0 0 100 48" aria-hidden="true"><path d="M15 36h70M25 30h8v-8h8v-8h8v8h8v8h8" fill="none" stroke="#009ee0" stroke-width="5"/></svg><span>Poucos píxeis</span></div>
-    <div><svg viewBox="0 0 100 48" aria-hidden="true"><path d="M8 38l23-22 18 17L65 9l27 29Z" fill="#b7e3f4" stroke="#009ee0" stroke-width="2"/><circle cx="77" cy="13" r="6" fill="#009ee0"/></svg><span>Cenários detalhados</span></div>
-    <strong>Espaço</strong>
-    <div><svg viewBox="0 0 100 48" aria-hidden="true"><circle cx="19" cy="30" r="12" fill="#b7e3f4"/><path d="M35 31Q53 7 78 17" fill="none" stroke="#009ee0" stroke-width="2" stroke-dasharray="4 3"/><circle cx="80" cy="17" r="4" fill="#009ee0"/></svg><span>Missões pioneiras</span></div>
-    <div><svg viewBox="0 0 100 48" aria-hidden="true"><circle cx="19" cy="30" r="12" fill="#b7e3f4"/><path d="M34 30Q55 0 79 15M37 36Q61 46 83 20" fill="none" stroke="#009ee0" stroke-width="2"/><circle cx="82" cy="17" r="6" fill="#009ee0"/></svg><span>Simulações complexas</span></div>
-    <strong>Tempo</strong>
-    <div><svg viewBox="0 0 100 48" aria-hidden="true"><path d="M8 7h84v34H8zM36 7v34M64 7v34M8 24h84" fill="none" stroke="#009ee0" stroke-width="2"/></svg><span>Modelos menos detalhados</span></div>
-    <div><svg viewBox="0 0 100 48" aria-hidden="true"><path d="M8 7h84v34H8zM20 7v34M32 7v34M44 7v34M56 7v34M68 7v34M80 7v34M8 15h84M8 24h84M8 32h84" fill="none" stroke="#009ee0" stroke-width="1.5"/></svg><span>Modelos mais detalhados</span></div>
+  <div class="eyebrow">Dentro do computador</div>
+  <h1>Como é um processador <em>por dentro</em>?</h1>
+  <div style="display:flex;align-items:center;justify-content:center;gap:70px;margin-top:12px">
+    <video controls playsinline preload="metadata" @keydown.stop aria-label="Ampliação de um processador de iPhone em silício" style="display:block;height:380px;max-width:45%">
+      <source src="/images/processador-silicio.mp4" type="video/mp4" />
+      O vídeo não pode ser reproduzido neste navegador.
+    </video>
+    <div style="width:360px">
+      <p style="font-size:16px;color:#4b5054;margin:0 0 12px">Exemplo: iPhone 15 Pro · chip A17 Pro</p>
+      <p style="font-size:43px;line-height:1.1;color:#009ee0;font-weight:700;margin:0">19 mil milhões</p>
+      <p style="font-size:22px;color:#202124;margin:8px 0 32px">de transístores num chip</p>
+      <p style="font-size:20px;color:#202124;margin:0 0 8px">A contar um por segundo:</p>
+      <p style="font-size:36px;line-height:1.1;color:#202124;font-weight:700;margin:0">cerca de <span style="color:#009ee0">600 anos</span></p>
+      <p style="font-size:20px;color:#202124;margin:32px 0 0">Como é que fazemos sentido disto?</p>
+    </div>
   </div>
-  <p class="small">Esquemas ilustrativos: não são imagens históricas nem previsões reais.</p>
 </div>
 
 <!--
-2:00 — Perguntar que diferenças notam entre jogos antigos e atuais. Comparar também missões espaciais e previsões do tempo: com mais capacidade e melhores métodos é possível trabalhar com modelos e dados mais detalhados. As ilustrações são esquemáticas; não são capturas reais. A melhoria resulta de vários avanços, não apenas da frequência do relógio.
+1:00 — Perguntar quantos componentes imaginam encontrar dentro de um processador antes de reproduzir o vídeo. A ampliação mostra a complexidade física de um chip real, em contraste com o esquema simplificado do diapositivo anterior. Como exemplo separado, o chip A17 Pro do iPhone 15 Pro tem 19 mil milhões de transístores: a contar um por segundo, demoraria cerca de 602 anos. Perguntar como podemos compreender tanta complexidade: a modelação de desempenho usa modelos simplificados para estudar onde se perde tempo e como melhorar. Fonte: https://www.tomshardware.com/news/apple-a17-pro-3nm-iphone-15-pro . O vídeo fornecido não tem áudio nesta apresentação. Confirmar a origem e a licença antes da apresentação.
 -->
 
 
@@ -209,7 +209,7 @@ layout: none
 <p style="color:#009ee0;font-size:14px;letter-spacing:.15em">SUPERCOMPUTAÇÃO</p>
 <h1 style="font-size:39px;margin:14px 0 20px">E se a equipa tivesse milhares de processadores?</h1>
 <div style="display:flex;gap:30px;align-items:center">
-<img src="/imagens/frontier-ornl.jpg" alt="Filas de armários do supercomputador Frontier no Oak Ridge National Laboratory" style="width:57%;height:275px;object-fit:cover;border-radius:12px" />
+<img src="/images/frontier-ornl.jpg" alt="Filas de armários do supercomputador Frontier no Oak Ridge National Laboratory" style="width:57%;height:275px;object-fit:cover;border-radius:12px" />
 <div style="font-size:25px;line-height:1.4"><strong style="color:#009ee0">Um supercomputador</strong><br>junta muitos processadores para resolver problemas exigentes.</div>
 </div>
 <p style="font-size:12px;color:#4b5054;margin-top:10px">Frontier · Oak Ridge National Laboratory · CC BY 2.0</p>

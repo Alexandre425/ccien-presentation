@@ -133,7 +133,7 @@ onBeforeUnmount(() => cancelAnimationFrame(animationFrame))
       <p v-if="stage === 0">Quanto espaço separa estes dois computadores?</p>
       <p v-else-if="stage === 1">Qual faz mais somas por segundo? Votem!</p>
       <p v-else-if="stage === 2">Uma diferença enorme!</p>
-      <p v-else>Como imaginar tantos computadores?</p>
+      <p v-else>Como é que um computador pode ser tão mais rápido que o outro?</p>
       <button v-if="stage < 3" type="button" @click="advance">{{ stage === 0 ? 'Revelar a escala' : stage === 1 ? 'Mostrar comparação' : 'Imaginar 9,6 milhões' }}</button>
       <button type="button" @click="reset">Reiniciar</button>
     </div>
