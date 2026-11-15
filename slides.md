@@ -171,6 +171,45 @@ layout: none
 
 <!-- Chip footage contrasts with the simplified processor diagram; the A17 Pro example highlights transistor scale. -->
 
+---
+layout: none
+---
+
+<div class="deck">
+  <div class="eyebrow">Dentro do computador</div>
+  <h1>Como são as instruções <em>por dentro</em>?</h1>
+  <div style="display:flex;align-items:center;justify-content:center;gap:50px;margin-top:12px">
+    <div style="width:450px">
+      <p style="font-size:16px;color:#4b5054;margin:0 0 8px">Exemplo: encontrar o caminho mais curto</p>
+      <pre style="margin:0;padding:14px 16px;background:#f2f6f8;border-radius:12px;font-size:14px;line-height:1.3;overflow:hidden"><code style="color:#202124"><span style="color:#009ee0">from</span> heapq <span style="color:#009ee0">import</span> heappop, heappush
+<span style="color:#009ee0">def</span> <span style="color:#d82168">caminho_mais_curto</span>(rede, inicio, destino):
+    dist = dict.fromkeys(rede, float(<span style="color:#d82168">'inf'</span>))
+    dist[inicio] = <span style="color:#d82168">0</span>
+    fila = [(<span style="color:#d82168">0</span>, inicio)]
+    <span style="color:#009ee0">while</span> fila:
+        custo, ponto = heappop(fila)
+        <span style="color:#009ee0">if</span> custo != dist[ponto]:
+            <span style="color:#009ee0">continue</span>
+        <span style="color:#009ee0">if</span> ponto == destino:
+            <span style="color:#009ee0">return</span> custo
+        <span style="color:#009ee0">for</span> vizinho, distancia <span style="color:#009ee0">in</span> rede[ponto]:
+            novo = custo + distancia
+            <span style="color:#009ee0">if</span> novo &lt; dist[vizinho]:
+                dist[vizinho] = novo
+                heappush(fila, (novo, vizinho))
+    <span style="color:#009ee0">return</span> float(<span style="color:#d82168">'inf'</span>)</code></pre>
+    </div>
+    <div style="width:360px">
+      <p style="font-size:16px;color:#4b5054;margin:0 0 12px">Um programa pode ter</p>
+      <p style="font-size:43px;line-height:1.1;color:#009ee0;font-weight:700;margin:0">milhões</p>
+      <p style="font-size:22px;color:#202124;margin:8px 0 32px">de instruções</p>
+      <p style="font-size:20px;color:#202124;margin:32px 0 0">Como sabemos se estas instruções são boas?</p>
+    </div>
+  </div>
+</div>
+
+<!-- Real Dijkstra code mirrors the processor slide and raises the question of software quality. -->
+
 
 ---
 layout: none

@@ -119,7 +119,7 @@ onBeforeUnmount(() => cancelAnimationFrame(frame))
         <div class="result"><span>Blocos partidos</span><strong>{{ side === 1 ? brokenLeft : brokenRight }}</strong></div>
       </div>
     </div>
-    <div class="bottom-row"><p>Os blocos chegam ao mesmo ritmo.</p><div class="controls"><button type="button" @click="toggle">{{ playing ? 'Pausar' : 'Continuar' }}</button><button type="button" @click="reset">Reiniciar</button></div></div>
+    <div class="bottom-row"><p>Não basta um processador rápido, precisamos de boas instruções.</p><div class="controls"><button type="button" @click="toggle">{{ playing ? 'Pausar' : 'Continuar' }}</button><button type="button" @click="reset">Reiniciar</button></div></div>
   </section>
 </template>
 

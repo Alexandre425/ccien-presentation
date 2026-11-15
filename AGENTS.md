@@ -33,6 +33,7 @@
 - Use pnpm through Corepack and follow the lockfile: `pnpm install --frozen-lockfile`.
 - Check changes in a browser and collect user feedback. Also test keyboard navigation and the affected interactive states.
 - For headless inspection, start `corepack pnpm dev` and use the headless browser tool. Navigate through the slides and test the affected controls.
+    - In windows environments, use `powershell.exe -NoProfile -ExecutionPolicy Bypass -Command corepack pnpm dev`.
 - Capture and inspect images with the browser tool. Wait until the slide and required states are visible before capturing.
 - Do not install a browser testing tool in the project for these checks. User feedback complements inspection.
 - For every visual change, build the project, open it in a browser, capture images, inspect them, and fix any problems.
