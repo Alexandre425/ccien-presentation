@@ -210,6 +210,43 @@ layout: none
 
 <!-- Real Dijkstra code mirrors the processor slide and raises the question of software quality. -->
 
+---
+layout: none
+---
+
+<div class="deck">
+  <div class="eyebrow">A minha investigação</div>
+  <h1>Como perceber algo <em>tão complexo</em>?</h1>
+  <p class="subtitle">Um modelo é uma versão simplificada que nos ajuda a compreender e a prever.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px">
+    <div class="card" style="padding:16px 20px;display:flex;flex-direction:column;justify-content:space-between;gap:12px">
+      <strong>Uma maquete para estudar um edifício</strong>
+      <img src="/images/architectural-model.jpg" alt="Maquete de edifícios em miniatura" style="display:block;width:100%;height:200px;flex-shrink:0;object-fit:cover;object-position:center 60%;border-radius:8px" />
+      <p style="margin:0">Mostra a forma e a organização, sem todos os detalhes.</p>
+    </div>
+    <div class="card" style="padding:16px 20px">
+      <strong>Um modelo para estudar computadores</strong>
+      <svg viewBox="0 0 380 150" role="img" aria-label="Um modelo do programa e do processador ajuda a compreender o desempenho e a prever o tempo de execução" style="display:block;width:100%;height:150px">
+        <rect x="8" y="26" width="95" height="42" rx="8" fill="white" stroke="#202124" stroke-width="2"/>
+        <rect x="8" y="86" width="95" height="42" rx="8" fill="white" stroke="#202124" stroke-width="2"/>
+        <text x="55" y="52" text-anchor="middle" style="font-size:14px" fill="#202124">Programa</text>
+        <text x="55" y="112" text-anchor="middle" style="font-size:14px" fill="#202124">Processador</text>
+        <path d="M103 47 H125 L143 77 M103 107 H125 L143 77" fill="none" stroke="#009ee0" stroke-width="3"/>
+        <rect x="143" y="51" width="90" height="52" rx="10" fill="#009ee0"/>
+        <text x="188" y="83" text-anchor="middle" style="font-size:16px" font-weight="700" fill="white">Modelo</text>
+        <path d="M233 77 H260 M253 70 L260 77 L253 84" fill="none" stroke="#009ee0" stroke-width="3"/>
+        <text x="320" y="62" text-anchor="middle" style="font-size:13px" fill="#202124">Compreender</text>
+        <text x="320" y="80" text-anchor="middle" style="font-size:13px" fill="#202124">e prever</text>
+        <text x="320" y="98" text-anchor="middle" style="font-size:13px" fill="#202124">o desempenho</text>
+      </svg>
+      <p>Modelação de desempenho: perceber o que torna um programa rápido ou lento.</p>
+    </div>
+  </div>
+  <p class="prompt" style="margin-top:16px">Também usamos modelos para prever o tempo atmosférico!</p>
+</div>
+
+<!-- An architectural model and a weather forecast connect familiar models to performance modelling. -->
+
 
 ---
 layout: none
