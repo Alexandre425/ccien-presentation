@@ -247,6 +247,30 @@ layout: none
 
 <!-- An architectural model and a weather forecast connect familiar models to performance modelling. -->
 
+---
+layout: none
+---
+
+<div class="deck">
+  <div class="eyebrow">Modelos no mundo real</div>
+  <h1>Onde mais usamos <em>modelos</em>?</h1>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px">
+    <div class="card" style="padding:16px 20px">
+      <strong>Prever o caminho de um furacão</strong>
+      <img src="/images/hurricane.gif" alt="Imagem de satélite animada de um furacão" style="display:block;width:100%;height:170px;object-fit:cover;border-radius:8px;margin-top:12px" />
+      <p style="font-size:17px;margin-top:12px"><span style="color:#009ee0;font-weight:700">Vento + temperatura</span> → modelo → caminho provável</p>
+    </div>
+    <div class="card" style="padding:16px 20px">
+      <strong>Perceber o movimento dos planetas</strong>
+      <PlanetOrbits />
+      <p style="font-size:17px;margin-top:12px"><span style="color:#009ee0;font-weight:700">Sol + planetas</span> → órbitas → prever posições</p>
+    </div>
+  </div>
+  <p class="prompt" style="margin-top:18px">O que podemos aprender sem reproduzir todos os detalhes?</p>
+</div>
+
+<!-- Satellite imagery introduces weather models; a simplified orbital diagram shows another way to understand and predict. -->
+
 
 ---
 layout: none
