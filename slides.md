@@ -107,7 +107,7 @@ layout: none
   <ProcessorWalkthrough />
 </div>
 
-<!-- Animated walkthrough reads 7 and 5, adds them, and stores 12; pause, resume, and restart are available. -->
+<!-- Animated walkthrough reads 7 and 5, joins them in the addition unit, pulses 12, and stores it; pause, resume, and restart are available. Values pass through the center of the memory unit. -->
 ---
 layout: none
 ---

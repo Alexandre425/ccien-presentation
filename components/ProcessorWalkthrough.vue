@@ -7,7 +7,7 @@ type Instruction =
   | { op: 'add', dest: Register, left: Register, right: Register }
   | { op: 'write', address: number, source: Register }
 type Point = [number, number]
-type Ball = { value: number, points: Point[] }
+type Ball = { value: number, points: Point[], progress?: number, scale?: number }
 
 // Change this program and the initial values to tell another small story.
 const program: Instruction[] = [
@@ -36,7 +36,7 @@ const registerY = (register: Register) => ({ r1: 119, r2: 159, r3: 199 })[regist
 const memoryY = (address: number) => 110 + (address - 1) * 40
 const regToUnit = (register: Register, y: number): Point[] => [[350, registerY(register)], [405, registerY(register)], [405, y], [480, y]]
 const unitToReg = (register: Register, y: number): Point[] => [...regToUnit(register, y)].reverse()
-const unitToMemory = (address: number): Point[] => [[580, 245], [700, 245], [700, memoryY(address)], [742, memoryY(address)]]
+const unitToMemory = (address: number): Point[] => [[530, 245], [580, 245], [700, 245], [700, memoryY(address)], [742, memoryY(address)]]
 const memoryToUnit = (address: number): Point[] => [...unitToMemory(address)].reverse()
 
 function label(item: Instruction) {
@@ -72,18 +72,24 @@ const balls = computed<Ball[]>(() => {
   if (item.op === 'read') {
     if (phase.value === 0) return [{ value: item.address, points: unitToMemory(item.address) }]
     if (phase.value === 1) return [{ value: memory.value[item.address], points: memoryToUnit(item.address) }]
-    return [{ value: memory.value[item.address], points: unitToReg(item.dest, 245) }]
+    return [{ value: memory.value[item.address], points: [[530, 245], ...unitToReg(item.dest, 245)] }]
   }
   if (item.op === 'add') {
     if (phase.value === 0) return [
-      { value: registers.value[item.left], points: regToUnit(item.left, 115) },
-      { value: registers.value[item.right], points: regToUnit(item.right, 115) },
+      { value: registers.value[item.left], points: [...regToUnit(item.left, 115), [515, 115]] },
+      { value: registers.value[item.right], points: [...regToUnit(item.right, 115), [545, 115]] },
     ]
     const result = registers.value[item.left] + registers.value[item.right]
-    if (phase.value === 1) return [{ value: result, points: [[500, 115], [530, 115], [550, 115]] }]
-    return [{ value: result, points: unitToReg(item.dest, 115) }]
+    if (phase.value === 1 && progress.value < 0.5) return [
+      { value: registers.value[item.left], points: [[515, 115], [530, 115]], progress: progress.value * 2 },
+      { value: registers.value[item.right], points: [[545, 115], [530, 115]], progress: progress.value * 2 },
+    ]
+    if (phase.value === 1) return [{
+      value: result, points: [[530, 115]], scale: 1 + 0.3 * Math.sin((progress.value - 0.5) * 2 * Math.PI),
+    }]
+    return [{ value: result, points: [[530, 115], ...unitToReg(item.dest, 115)] }]
   }
-  if (phase.value === 0) return [{ value: registers.value[item.source], points: regToUnit(item.source, 245) }]
+  if (phase.value === 0) return [{ value: registers.value[item.source], points: [...regToUnit(item.source, 245), [530, 245]] }]
   if (phase.value === 1) return [{ value: registers.value[item.source], points: unitToMemory(item.address) }]
   return [{ value: registers.value[item.source], points: [[742, memoryY(item.address)], [742, memoryY(item.address)]] }]
 })
@@ -188,7 +194,7 @@ onBeforeUnmount(() => cancelAnimationFrame(frame))
       </g>
       <text x="795" y="281" class="hint">⋮</text>
 
-      <g v-for="(ball, i) in balls" :key="i" :transform="`translate(${position(ball.points, progress)[0]} ${position(ball.points, progress)[1]})`" class="ball" :class="{ paused }">
+      <g v-for="(ball, i) in balls" :key="i" :transform="`translate(${position(ball.points, ball.progress ?? progress)[0]} ${position(ball.points, ball.progress ?? progress)[1]}) scale(${ball.scale ?? 1})`" class="ball" :class="{ paused }">
         <circle r="13"/><text text-anchor="middle" y="5">{{ ball.value }}</text>
       </g>
       <g v-if="active" class="annotation">
