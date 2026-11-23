@@ -77,15 +77,13 @@ layout: none
 <div class="deck">
   <div class="eyebrow">Computadores em todo o lado</div>
   <h1>O que acontece quando é <em>demasiado lento</em>?</h1>
-  <div class="grid three">
-    <div class="card"><span class="icon">🎮</span><strong>Jogo</strong><p>Uma resposta atrasada pode estragar uma jogada.</p></div>
-    <div class="card"><span class="icon">💬</span><strong>Videochamada</strong><p>O atraso torna a conversa mais difícil.</p></div>
-    <div class="card"><span class="icon">🚨</span><strong>Segurança</strong><p>Um aviso tem de chegar a tempo.</p></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <DinosaurFrameRate />
+    <CarScanComparison />
   </div>
-  <p class="prompt">Não basta conseguir fazer: é preciso fazer a tempo.</p>
 </div>
 
-<!-- Shows how delays affect games, calls, and safety systems. -->
+<!-- The game compares smooth and delayed animation; the car compares fast and slow obstacle analysis. -->
 
 ---
 layout: none
