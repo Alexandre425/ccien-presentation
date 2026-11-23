@@ -104,6 +104,17 @@ layout: none
 ---
 
 <div class="deck">
+  <div class="eyebrow">Dentro do computador</div>
+  <h1>Como é que funciona o <em>processador</em>?</h1>
+  <ProcessorWalkthrough />
+</div>
+
+<!-- Animated walkthrough reads 7 and 5, adds them, and stores 12; pause, resume, and restart are available. -->
+---
+layout: none
+---
+
+<div class="deck">
   <div class="eyebrow">A revolução da velocidade</div>
   <h1>O que muda quando o relógio bate <em>mais depressa</em>?</h1>
   <PickaxeComparison mode="frequency" />
@@ -122,17 +133,6 @@ layout: none
 
 <!-- Four pickaxes work on separate blocks at the same rate; a counter combines their results. -->
 
----
-layout: none
----
-
-<div class="deck">
-  <div class="eyebrow">Dentro do computador</div>
-  <h1>Como é que funciona o <em>processador</em>?</h1>
-  <ProcessorWalkthrough />
-</div>
-
-<!-- Animated walkthrough reads 7 and 5, adds them, and stores 12; pause, resume, and restart are available. -->
 
 ---
 layout: none
