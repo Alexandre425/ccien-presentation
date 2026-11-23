@@ -77,13 +77,43 @@ layout: none
 <div class="deck">
   <div class="eyebrow">Computadores em todo o lado</div>
   <h1>O que acontece quando é <em>demasiado lento</em>?</h1>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+  <div v-click.hide="1" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
     <DinosaurFrameRate />
     <CarScanComparison />
   </div>
+  <div v-click="1" style="position:absolute;top:123px;left:48px;right:48px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div>
+      <div style="display:flex;align-items:baseline;gap:12px;margin:20px 0 8px"><strong style="font-size:21px;color:#202124">Um jogo</strong></div>
+      <div class="card" style="padding:14px 18px;height:320px">
+        <p style="margin:0;color:#009ee0;font-size:34px;font-weight:750;line-height:1.1">≈ 16 milhões</p>
+        <p style="margin:5px 0 0;font-size:18px;color:#202124">de triângulos por imagem</p>
+        <img src="/images/game-car-wireframe.svg" alt="Malha triangular de um carro criado para um videojogo" style="display:block;width:100%;height:180px;object-fit:contain" />
+        <p style="font-size:12px;margin:2px 0 0">Malha ilustrativa · Exemplo: Call of Duty: Modern Warfare (2019)</p>
+      </div>
+    </div>
+    <div>
+      <div style="display:flex;align-items:baseline;gap:12px;margin:20px 0 8px"><strong style="font-size:21px;color:#202124">Um carro</strong></div>
+      <div class="card" style="padding:14px 18px;height:320px">
+        <p style="margin:0;color:#009ee0;font-size:34px;font-weight:750;line-height:1.1">≈ 9 mil milhões</p>
+        <p style="margin:5px 0 0;font-size:18px;color:#202124">de operações matemáticas por imagem</p>
+        <svg viewBox="0 0 1000 667" role="img" aria-label="Fotografia de trânsito com caixas ilustrativas em torno de automóveis detetados" style="display:block;width:100%;height:180px;margin-top:4px">
+          <image href="/images/traffic-cc0.jpg" width="1000" height="667" />
+          <g fill="none" stroke="#009ee0" stroke-width="7">
+            <rect x="403" y="375" width="110" height="104" /><rect x="326" y="333" width="86" height="74" />
+            <rect x="580" y="378" width="110" height="80" /><rect x="668" y="421" width="122" height="95" />
+            <rect x="770" y="502" width="159" height="103" /><rect x="492" y="458" width="126" height="109" />
+          </g>
+        </svg>
+        <p style="font-size:12px;margin:0">Exemplo: YOLOv8n · imagem de 640 × 640 · ilustração</p>
+      </div>
+    </div>
+  </div>
+  <p v-click.hide="1" style="position:absolute;right:48px;bottom:42px;margin:0;color:#505b60;font-size:12px">Avança para ver a escala dos cálculos →</p>
 </div>
 
 <!-- The game compares smooth and delayed animation; the car compares fast and slow obstacle analysis. -->
+<!-- Figures: Activision / Infinity Ward, 2019: https://blog.activision.com/ca/en/call-of-duty/2019-06/Initial-Intel-Call-of-Duty-Modern-Warfares-game-engine-is-put-through-its-paces ; Ultralytics YOLOv8n, 640 px, 8.7 billion operations per inference: https://docs.ultralytics.com/models/yolov8/ -->
+<!-- Images: game car wireframe rendered from Drummyfish's CC0 game asset https://opengameart.org/content/low-poly-car-3 ; traffic photo by Kiwiev, CC0 https://commons.wikimedia.org/wiki/File:Auckland_traffic_-_copyright-free_photo_released_to_public_domain.jpg . Detection boxes are illustrative, not model output. -->
 
 ---
 layout: none
