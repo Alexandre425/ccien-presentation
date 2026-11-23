@@ -84,20 +84,20 @@ layout: none
   <div v-click="1" style="position:absolute;top:123px;left:48px;right:48px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
     <div>
       <div style="display:flex;align-items:baseline;gap:12px;margin:20px 0 8px"><strong style="font-size:21px;color:#202124">Um jogo</strong></div>
-      <div class="card" style="padding:14px 18px;height:320px">
+      <div class="card" style="padding:14px 18px;height:320px;position:relative">
         <p style="margin:0;color:#009ee0;font-size:34px;font-weight:750;line-height:1.1">≈ 16 milhões</p>
         <p style="margin:5px 0 0;font-size:18px;color:#202124">de triângulos por imagem</p>
         <img src="/images/game-car-wireframe.svg" alt="Malha triangular de um carro criado para um videojogo" style="display:block;width:100%;height:180px;object-fit:contain" />
-        <p style="font-size:12px;margin:2px 0 0">Malha ilustrativa · Exemplo: Call of Duty: Modern Warfare (2019)</p>
+        <p style="font-size:12px;margin:0;position:absolute;bottom:14px;left:18px;right:18px">Malha ilustrativa · Exemplo: Call of Duty: Modern Warfare (2019)</p>
       </div>
     </div>
     <div>
       <div style="display:flex;align-items:baseline;gap:12px;margin:20px 0 8px"><strong style="font-size:21px;color:#202124">Um carro</strong></div>
-      <div class="card" style="padding:14px 18px;height:320px">
+      <div class="card" style="padding:14px 18px;height:320px;position:relative">
         <p style="margin:0;color:#009ee0;font-size:34px;font-weight:750;line-height:1.1">≈ 9 mil milhões</p>
         <p style="margin:5px 0 0;font-size:18px;color:#202124">de operações matemáticas por imagem</p>
         <img src="/images/car-vision.gif" alt="Imagem animada de deteção de veículos e da área transitável numa estrada" style="display:block;width:100%;height:180px;object-fit:contain;margin-top:4px" />
-        <p style="font-size:12px;margin:0">Exemplo: YOLOv8n · imagem de 640 × 640 · ilustração</p>
+        <p style="font-size:12px;margin:0;position:absolute;bottom:14px;left:18px;right:18px">Exemplo: YOLOv8n · imagem de 640 × 640 · ilustração</p>
       </div>
     </div>
   </div>
