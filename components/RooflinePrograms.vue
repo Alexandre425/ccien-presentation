@@ -48,6 +48,11 @@ function breakProgress(hard: boolean) {
   const sinceFirstHit = elapsed.value / 1000 - .6 - (hard ? 3.75 : .75)
   return sinceFirstHit < 0 ? 1 : Math.min((sinceFirstHit % 4) / .4, 1)
 }
+function particleProgress(hard: boolean) {
+  if (!hard) return breakProgress(false)
+  const sinceFirstHit = elapsed.value / 1000 - .6 - .75
+  return sinceFirstHit < 0 ? 1 : Math.min((sinceFirstHit % 1) / .4, 1)
+}
 function fragmentTransform(index: number, progress: number) {
   const angle = Math.sin(index * 47 * 12.9898) * Math.PI
   const distance = 18 + (index % 3) * 10
@@ -95,8 +100,10 @@ onBeforeUnmount(() => cancelAnimationFrame(frame))
                 <path d="M-5-6Q0-8 5-6V5Q0 6-5 5Z" fill="#405660" stroke="#202124" stroke-width="1.5" />
               </g>
             </g>
+            <g v-if="particleProgress(hard) < 1" transform="translate(244 71)" :opacity="1 - particleProgress(hard)">
+              <rect v-for="index in 6" :key="index" x="-3" y="-3" width="6" height="6" rx="1" :fill="index % 2 ? '#009ee0' : '#80cbe9'" :transform="fragmentTransform(index, particleProgress(hard))" />
+            </g>
             <g v-if="breakProgress(hard) < 1" transform="translate(244 71)" :opacity="1 - breakProgress(hard)">
-              <rect v-for="index in 6" :key="index" x="-3" y="-3" width="6" height="6" rx="1" :fill="index % 2 ? '#009ee0' : '#80cbe9'" :transform="fragmentTransform(index, breakProgress(hard))" />
               <text x="15" :y="-8 - breakProgress(hard) * 30" class="plus">+</text>
             </g>
             <text x="310" y="67" class="status" :fill="!arrived || (!hard && hits >= 1) ? '#d82168' : '#202124'">{{ !arrived || (!hard && hits >= 1) ? 'À espera' : 'A trabalhar' }}</text>
