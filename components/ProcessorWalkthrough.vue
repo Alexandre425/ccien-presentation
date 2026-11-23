@@ -24,7 +24,7 @@ const elapsed = ref(0)
 const running = ref(false)
 const paused = ref(false)
 const completed = ref(false)
-const duration = 1500
+const duration = 3000
 let frame = 0
 let previous = 0
 

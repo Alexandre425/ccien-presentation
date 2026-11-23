@@ -86,17 +86,17 @@ layout: none
       <div style="display:flex;align-items:baseline;gap:12px;margin:20px 0 8px"><strong style="font-size:21px;color:#202124">Um jogo</strong></div>
       <div class="card" style="padding:14px 18px;height:320px;position:relative">
         <p style="margin:0;color:#009ee0;font-size:34px;font-weight:750;line-height:1.1">≈ 16 milhões</p>
-        <p style="margin:5px 0 0;font-size:18px;color:#202124">de triângulos por imagem</p>
+        <p style="margin:5px 0 0;font-size:16px;color:#202124">de triângulos por imagem</p>
         <img src="/images/game-car-wireframe.svg" alt="Malha triangular de um carro criado para um videojogo" style="display:block;width:100%;height:180px;object-fit:contain" />
-        <p style="font-size:12px;margin:0;position:absolute;bottom:14px;left:18px;right:18px">Malha ilustrativa · Exemplo: Call of Duty: Modern Warfare (2019)</p>
+        <p style="font-size:12px;margin:0;position:absolute;bottom:14px;left:18px;right:18px">Cálculo: Call of Duty: Modern Warfare (2019) · Malha ilustrativa</p>
       </div>
     </div>
     <div>
       <div style="display:flex;align-items:baseline;gap:12px;margin:20px 0 8px"><strong style="font-size:21px;color:#202124">Um carro</strong></div>
       <div class="card" style="padding:14px 18px;height:320px;position:relative">
         <p style="margin:0;color:#009ee0;font-size:34px;font-weight:750;line-height:1.1">≈ 9 mil milhões</p>
-        <p style="margin:5px 0 0;font-size:18px;color:#202124">de operações matemáticas por imagem</p>
-        <img src="/images/car-vision.gif" alt="Imagem animada de deteção de veículos e da área transitável numa estrada" style="display:block;width:100%;height:180px;object-fit:contain;margin-top:4px" />
+        <p style="margin:5px 0 0;font-size:16px;color:#202124">de operações matemáticas por imagem</p>
+        <img src="/images/car-vision.gif" alt="Imagem animada de deteção de veículos e da área transitável numa estrada" style="display:block;width:100%;height:180px;object-fit:contain;margin-top:10px;margin-bottom:10px" />
         <p style="font-size:12px;margin:0;position:absolute;bottom:14px;left:18px;right:18px">Cálculo: YOLOv8n (640 × 640) · Vídeo: YOLOP</p>
       </div>
     </div>
@@ -241,12 +241,12 @@ layout: none
   <p class="subtitle">Um modelo é uma versão simplificada que nos ajuda a compreender e a prever.</p>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px">
     <div class="card" style="padding:16px 20px;display:flex;flex-direction:column;justify-content:space-between;gap:12px">
-      <strong>Uma maquete para estudar um edifício</strong>
+      <strong style="font-size:20px">Uma maquete para estudar um edifício</strong>
       <img src="/images/architectural-model.jpg" alt="Maquete de edifícios em miniatura" style="display:block;width:100%;height:200px;flex-shrink:0;object-fit:cover;object-position:center 60%;border-radius:8px" />
       <p style="margin:0">Mostra a forma e a organização, sem todos os detalhes.</p>
     </div>
     <div class="card" style="padding:16px 20px">
-      <strong>Um modelo para estudar computadores</strong>
+      <strong style="font-size:20px">Um modelo para estudar computadores</strong>
       <svg viewBox="0 0 380 150" role="img" aria-label="Um modelo do programa e do processador ajuda a compreender o desempenho e a prever o tempo de execução" style="display:block;width:100%;height:150px">
         <rect x="8" y="26" width="95" height="42" rx="8" fill="white" stroke="#202124" stroke-width="2"/>
         <rect x="8" y="86" width="95" height="42" rx="8" fill="white" stroke="#202124" stroke-width="2"/>
