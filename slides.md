@@ -271,6 +271,88 @@ layout: none
 
 <!-- Satellite imagery introduces weather models; a simplified orbital diagram shows another way to understand and predict. -->
 
+---
+layout: none
+---
+
+<div class="deck">
+  <div class="eyebrow">A minha investigação</div>
+  <h1>Como é que modelamos um <em>processador</em>?</h1>
+  <div style="display:grid;grid-template-columns: 0.9fr 1.1fr;gap:28px;align-items:center;margin-top:18px;color:#202124">
+    <div>
+      <p style="font-size:22px;font-weight:700;margin:0 0 12px">Modelo Roofline / do Telhado</p>
+      <p style="font-size:18px;margin:0 0 20px">Uma equação muito simples para descrever o sistema todo.</p>
+      <div style="background:#f2f6f8;border-radius:12px;padding:18px;font-size:20px;line-height:1.6">
+        <strong style="color:#202124">Velocidade = mínimo entre</strong><br />
+        <span style="color:#009ee0">velocidade do processador</span><br />
+        <strong style="color:#202124">ou</strong><br />
+        <span style="color:#d82168">chegada de dados × trabalho por dado</span>
+      </div>
+      <p style="font-size:17px;margin:18px 0 0">O limite mais baixo ganha.</p>
+    </div>
+    <div>
+      <svg viewBox="0 0 500 340" role="img" aria-label="Gráfico Roofline: a velocidade aumenta com o trabalho por dado até atingir o limite do processador. Antes disso, a chegada de dados limita a velocidade." style="display:block;width:100%">
+        <text x="19" y="25" fill="#202124" style="font-size:17px" font-weight="700">Velocidade</text>
+        <text x="19" y="45" fill="#202124" style="font-size:15px">do programa ↑</text>
+        <path d="M65 65 V275 H470" fill="none" stroke="#202124" stroke-width="2"/>
+        <path d="M65 260 L280 95" fill="none" stroke="#d82168" stroke-width="5" stroke-linecap="round"/>
+        <path d="M280 95 H450" fill="none" stroke="#009ee0" stroke-width="5" stroke-linecap="round"/>
+        <text x="295" y="75" fill="#009ee0" style="font-size:16px" font-weight="700">Limite do processador</text>
+        <text x="90" y="105" fill="#d82168" style="font-size:16px" font-weight="700">Limite dos dados</text>
+        <text x="90" y="126" fill="#202124" style="font-size:14px">À espera de blocos</text>
+        <text x="315" y="123" fill="#202124" style="font-size:14px">Picareta no máximo</text>
+        <text x="265" y="310" text-anchor="middle" fill="#202124" style="font-size:16px" font-weight="700">Mais trabalho por dado →</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- Roofline connects the processor and data delivery limits to the earlier pickaxe and block analogy. -->
+
+---
+layout: none
+---
+
+<div class="deck">
+  <div class="eyebrow">A minha investigação</div>
+  <h1>Qual programa aproveita melhor os <em>dados</em>?</h1>
+  <RooflinePrograms />
+</div>
+
+<!-- Equal block delivery contrasts a processor-limited program with a data-limited program on the roofline. -->
+
+---
+layout: none
+---
+
+<div class="deck">
+  <div class="eyebrow">A minha investigação</div>
+  <h1>Este programa pode ser <em>mais rápido</em>?</h1>
+  <div class="efficiency-example">
+    <div>
+      <p class="subtitle">E se deitarmos blocos fora?</p>
+      <MemoryAccessComparison class="efficiency-animation" aria-label="Programa que deita fora alguns blocos recebidos da memória" />
+    </div>
+    <svg viewBox="0 0 400 300" role="img" aria-label="O programa está abaixo do limite dos dados no gráfico do telhado. A distância até ao limite mostra que pode haver margem para melhorar.">
+      <text x="12" y="22" class="efficiency-axis">Velocidade ↑</text>
+      <path d="M45 36 V245 H382" fill="none" stroke="#202124" stroke-width="2" />
+      <path d="M45 230 L252 70" fill="none" stroke="#d82168" stroke-width="4" stroke-linecap="round" />
+      <path d="M252 70 H372" fill="none" stroke="#009ee0" stroke-width="4" stroke-linecap="round" />
+      <text x="260" y="51" class="efficiency-roof">Processador</text>
+      <text x="75" y="103" class="efficiency-data">Dados</text>
+      <path d="M125 195 V174 M119 182 L125 174 L131 182" fill="none" stroke="#202124" stroke-width="2" stroke-dasharray="2 1" />
+      <circle cx="125" cy="205" r="8" fill="#d82168" stroke="white" stroke-width="2" />
+      <text x="125" y="228" text-anchor="middle" class="efficiency-label">Este programa</text>
+      <text x="235" y="150" text-anchor="middle" class="efficiency-label">Pode ser</text>
+      <text x="235" y="169" text-anchor="middle" class="efficiency-label">mais rápido!</text>
+      <text x="211" y="275" text-anchor="middle" class="efficiency-axis">Mais trabalho por bloco →</text>
+    </svg>
+  </div>
+  <p class="prompt" style="margin-top:12px">O modelo mostra a margem para melhorar.</p>
+</div>
+
+<!-- The discarded-block animation revisits slide 10; a point below the roof shows room to improve. -->
+
 
 ---
 layout: none
