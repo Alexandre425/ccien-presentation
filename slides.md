@@ -64,7 +64,7 @@ layout: none
   <h1>Onde vive um vídeo antes de chegar ao telemóvel?</h1>
   <div class="split">
     <div><span class="tag">Computadores à distância</span><p class="label">Servidores em centros de dados ajudam a fornecer vídeos, jogos online, pesquisas e serviços de IA.</p><p class="prompt">O teu dispositivo comunica com eles através da rede.</p></div>
-    <div><img class="photo" src="/images/servidores.jpg" alt="Fotografia de filas de servidores num centro de dados"/><p class="credit">Carl Lender · CC BY 2.0 · recorte na apresentação</p></div>
+    <div><img class="photo" src="/images/servidores.jpg" alt="Fotografia de uma mulher num centro de dados"/><p class="credit">Fonte: Nomios</p></div>
   </div>
 </div>
 
