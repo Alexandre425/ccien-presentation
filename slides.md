@@ -97,7 +97,7 @@ layout: none
         <p style="margin:0;color:#009ee0;font-size:34px;font-weight:750;line-height:1.1">≈ 9 mil milhões</p>
         <p style="margin:5px 0 0;font-size:18px;color:#202124">de operações matemáticas por imagem</p>
         <img src="/images/car-vision.gif" alt="Imagem animada de deteção de veículos e da área transitável numa estrada" style="display:block;width:100%;height:180px;object-fit:contain;margin-top:4px" />
-        <p style="font-size:12px;margin:0;position:absolute;bottom:14px;left:18px;right:18px">Exemplo: YOLOv8n · imagem de 640 × 640 · ilustração</p>
+        <p style="font-size:12px;margin:0;position:absolute;bottom:14px;left:18px;right:18px">Cálculo: YOLOv8n (640 × 640) · Vídeo: YOLOP</p>
       </div>
     </div>
   </div>
@@ -106,7 +106,7 @@ layout: none
 
 <!-- The game compares smooth and delayed animation; the car compares fast and slow obstacle analysis. -->
 <!-- Figures: Activision / Infinity Ward, 2019: https://blog.activision.com/ca/en/call-of-duty/2019-06/Initial-Intel-Call-of-Duty-Modern-Warfares-game-engine-is-put-through-its-paces ; Ultralytics YOLOv8n, 640 px, 8.7 billion operations per inference: https://docs.ultralytics.com/models/yolov8/ -->
-<!-- Game car wireframe rendered from Drummyfish's CC0 game asset: https://opengameart.org/content/low-poly-car-3 . The car-vision GIF was supplied by the presenter. -->
+<!-- Game car wireframe rendered from Drummyfish's CC0 game asset: https://opengameart.org/content/low-poly-car-3 . Car-vision GIF: YOLOP, https://github.com/hustvl/YOLOP . -->
 
 ---
 layout: none
