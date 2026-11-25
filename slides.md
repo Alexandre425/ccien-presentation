@@ -375,6 +375,21 @@ layout: none
 <!-- The discarded-block animation revisits slide 10; a point below the roof shows room to improve. -->
 
 
+
+---
+layout: none
+---
+
+<div class="deck">
+  <div class="eyebrow">A minha investigação</div>
+  <h1>Como usamos um modelo <em>na prática</em>?</h1>
+  <p class="subtitle">CARM Tool: uma ferramenta que desenvolvo e utilizo para estudar programas reais.</p>
+  <img src="/images/carm-tool-screenshot.png" alt="Captura da ferramenta CARM Tool, com programas representados por pontos num gráfico de limites de desempenho" style="display:block;width:100%;height:340px;object-fit:contain;margin-top:12px" />
+  <p class="prompt" style="margin-top:12px">O modelo ajuda a descobrir onde podemos fazer mais com menos.</p>
+</div>
+
+<!-- A real tool connects the roofline model to the presenter's research. -->
+
 ---
 layout: none
 ---
