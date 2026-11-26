@@ -75,7 +75,7 @@ onBeforeUnmount(() => cancelAnimationFrame(frame))
       <p><strong>O computador tem de:</strong> seguir as regras · detetar obstáculos · desenhar imagens</p>
       <div class="controls">
         <button type="button" @click="toggle">{{ playing ? 'Pausar' : 'Continuar' }}</button>
-        <button type="button" @click="restart">Recomeçar</button>
+        <button type="button" aria-label="Reiniciar jogo" @click="restart">Reiniciar</button>
       </div>
     </div>
   </div>

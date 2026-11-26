@@ -184,9 +184,10 @@ onBeforeUnmount(() => cancelAnimationFrame(frame))
       </g>
       <rect x="480" y="92" width="100" height="46" rx="10" class="unit" :class="{ lit: active && instruction.op === 'add' }" />
       <text x="530" y="120" text-anchor="middle" class="unit-text">＋ Soma</text>
-      <rect x="480" y="222" width="100" height="46" rx="10" class="unit" :class="{ lit: active && instruction.op !== 'add' }" />
-      <text x="530" y="242" text-anchor="middle" class="unit-text">↔ Memória</text>
-      <text x="530" y="257" text-anchor="middle" class="unit-sub">ler / guardar</text>
+      <rect x="460" y="217" width="140" height="56" rx="10" class="unit" :class="{ lit: active && instruction.op !== 'add' }" />
+      <text x="530" y="235" text-anchor="middle" class="unit-text">↔ Unidade de</text>
+      <text x="530" y="250" text-anchor="middle" class="unit-text">memória</text>
+      <text x="530" y="264" text-anchor="middle" class="unit-sub">ler / guardar</text>
 
       <g v-for="address in [1, 2, 3, 4]" :key="address" :transform="`translate(742 ${memoryY(address) - 16})`">
         <rect width="122" height="32" rx="6" class="memory-row" :class="{ lit: active && instruction.op !== 'add' && instruction.address === address && (instruction.op === 'read' ? phase < 2 : phase > 0) }" />
@@ -199,7 +200,7 @@ onBeforeUnmount(() => cancelAnimationFrame(frame))
       </g>
       <g v-if="active" class="annotation">
         <path :d="instruction.op === 'add' ? 'M610 78 L582 100 M582 100 l3 -9 M582 100 l9 -2' : 'M610 195 L582 227 M582 227 l2 -10 M582 227 l10 -3'" />
-        <ellipse :cx="530" :cy="instruction.op === 'add' ? 115 : 245" rx="58" ry="30" />
+        <ellipse :cx="530" :cy="instruction.op === 'add' ? 115 : 245" :rx="instruction.op === 'add' ? 58 : 76" :ry="instruction.op === 'add' ? 30 : 35" />
         <text x="610" :y="instruction.op === 'add' ? 75 : 192">{{ instruction.op === 'add' ? 'soma' : 'acesso' }}</text>
       </g>
     </svg>

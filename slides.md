@@ -307,12 +307,12 @@ layout: none
         <strong style="color:#202124">Velocidade = mínimo entre</strong><br />
         <span style="color:#009ee0">velocidade do processador</span><br />
         <strong style="color:#202124">ou</strong><br />
-        <span style="color:#d82168">chegada de dados × trabalho por dado</span>
+        <span style="color:#d82168">chegada de blocos × trabalho por bloco</span>
       </div>
-      <p style="font-size:17px;margin:18px 0 0">O limite mais baixo ganha.</p>
+      <p style="font-size:17px;margin:18px 0 0">Cada bloco representa dados. O limite mais baixo ganha.</p>
     </div>
     <div>
-      <svg viewBox="0 0 500 340" role="img" aria-label="Gráfico Roofline: a velocidade aumenta com o trabalho por dado até atingir o limite do processador. Antes disso, a chegada de dados limita a velocidade." style="display:block;width:100%">
+      <svg viewBox="0 0 500 340" role="img" aria-label="Gráfico Roofline: a velocidade aumenta com o trabalho por bloco até atingir o limite do processador. Antes disso, a chegada de blocos limita a velocidade." style="display:block;width:100%">
         <text x="19" y="25" fill="#202124" style="font-size:17px" font-weight="700">Velocidade</text>
         <text x="19" y="45" fill="#202124" style="font-size:15px">do programa ↑</text>
         <path d="M65 65 V275 H470" fill="none" stroke="#202124" stroke-width="2"/>
@@ -322,7 +322,7 @@ layout: none
         <text x="90" y="105" fill="#d82168" style="font-size:16px" font-weight="700">Limite dos dados</text>
         <text x="90" y="126" fill="#202124" style="font-size:14px">À espera de blocos</text>
         <text x="315" y="123" fill="#202124" style="font-size:14px">Picareta no máximo</text>
-        <text x="265" y="310" text-anchor="middle" fill="#202124" style="font-size:16px" font-weight="700">Mais trabalho por dado →</text>
+        <text x="265" y="310" text-anchor="middle" fill="#202124" style="font-size:16px" font-weight="700">Mais trabalho por bloco →</text>
       </svg>
     </div>
   </div>

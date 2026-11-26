@@ -83,7 +83,7 @@ onBeforeUnmount(() => cancelAnimationFrame(frame))
       <p><strong>O computador tem de:</strong> analisar sensores · detetar perigos · travar</p>
       <div class="controls">
         <button type="button" :aria-label="playing ? 'Pausar carro' : 'Continuar carro'" @click="toggle">{{ playing ? 'Pausar' : 'Continuar' }}</button>
-        <button type="button" aria-label="Recomeçar carro" @click="restart">Recomeçar</button>
+        <button type="button" aria-label="Reiniciar carro" @click="restart">Reiniciar</button>
       </div>
     </div>
   </div>

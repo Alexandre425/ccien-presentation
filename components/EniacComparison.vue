@@ -119,8 +119,8 @@ onBeforeUnmount(() => cancelAnimationFrame(animationFrame))
         </svg>
       </div>
     </div>
-      <div v-if="stage === 2" class="chart" data-testid="comparison-chart" aria-label="Gráfico linear: cerca de 5 000 somas por segundo no ENIAC e estimativa teórica para o telemóvel">
-        <div class="chart-title">Somas por segundo · escala linear</div>
+      <div v-if="stage === 2" class="chart" data-testid="comparison-chart" aria-label="Gráfico linear de operações por segundo, usando somas: cerca de 5 000 no ENIAC e estimativa teórica para o telemóvel">
+        <div class="chart-title">Operações por segundo: somas · escala linear</div>
         <div class="plot">
           <div class="eniac-pointer"><span>ENIAC<br><strong>≈ 5 000</strong></span><i>↓</i></div>
           <div class="phone-column"><span>Telemóvel · estimativa<br><strong>≈ 48 mil milhões</strong></span><div class="phone-bar" /></div>
