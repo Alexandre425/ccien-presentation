@@ -39,28 +39,6 @@ layout: none
 
 <div class="deck">
   <div class="eyebrow">Computadores em todo o lado</div>
-  <h1>Onde estão os computadores <em>escondidos</em>?</h1>
-  <div v-click>
-  <p class="subtitle">Um computador não precisa de teclado nem de ecrã.</p>
-  <div class="grid six">
-    <div class="card"><span class="icon">📱</span><strong>Telemóvel</strong></div>
-    <div class="card"><span class="icon">🛗</span><strong>Elevador</strong></div>
-    <div class="card"><span class="icon">💳</span><strong>Pagamento</strong></div>
-    <div class="card"><span class="icon">🚗</span><strong>Carro</strong></div>
-    <div class="card"><span class="icon">⌚</span><strong>Relógio</strong></div>
-    <div class="card"><span class="icon">🎮</span><strong>Consola</strong></div>
-  </div>
-  </div>
-</div>
-
-<!-- A click reveals examples of computers without screens or keyboards. -->
-
----
-layout: none
----
-
-<div class="deck">
-  <div class="eyebrow">Computadores em todo o lado</div>
   <h1>Onde vive um vídeo antes de chegar ao telemóvel?</h1>
   <div class="split">
     <div><span class="tag">Computadores à distância</span><p class="label">Servidores em centros de dados ajudam a fornecer vídeos, jogos online, pesquisas e serviços de IA.</p><p class="prompt">O teu dispositivo comunica com eles através da rede.</p></div>
